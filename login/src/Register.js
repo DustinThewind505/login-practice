@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+import './Form.css';
+
 function Register() {
 
     return (
@@ -65,32 +67,9 @@ function Register() {
                     />
                 </label>
 
-                <label>
-                    Bio:
-                <br />
-                    <input
-                        className="input inputBio"
-                        as="textarea"
-                        name="bio"
-                        placeholder="About me"
-                    />
-                </label>
-
-                <label>
-                    Profile Image:
-                <br />
-                    <input
-                        className="input inputImage"
-                        type="text"
-                        name="user_picture"
-                        placeholder="About me"
-                    />
-                </label>
-
                 <input className="submitButton" type="submit" />
             </form>
             <Link to="/sign-in" className="signUpSwitch">Already have an account? Sign In!</Link>
-            <Link to="/" className="guestSignIn">Just wanna browse? Continue as a guest.</Link>
         </div >
     )
 }
