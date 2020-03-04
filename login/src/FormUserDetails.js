@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-//import AppBar from 'material-ui/AppBar';
-import TextField from 'material-ui/TextField';
-//import RadioButton from 'material-ui/RadioButton';
+import Dialog from '@material-ui/core/Dialog';
+import AppBar from '@material-ui/core/AppBar';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 export class FormUserDetails extends Component {
 continue = event => {
@@ -15,11 +16,11 @@ continue = event => {
         return (
             <MuiThemeProvider>
                 <React.Fragment>
-                    {/* <AppBar title='Enter User Details'/> */}
-                    <TextField 
-                    hintText='Enter Your First Name'
-                    floatingLabelText='First Name'
-                    onChange={handleChange}
+                <AppBar/>
+                <TextField
+                hintText='enter Your first name'
+                floatingLabelText='First Name'
+                onChange={handleChange('firstName')}
                     />
                 </React.Fragment>
             </MuiThemeProvider>
