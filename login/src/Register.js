@@ -15,7 +15,7 @@ function Register() {
                 <label>
                     *Username:
                 <input
-                        className="input inputName"
+                        className="username"
                         name="username"
                         type="text"
                         placeholder="enter username"
@@ -24,7 +24,7 @@ function Register() {
                 <label>
                     *Password:
                 <input
-                        className="input inputPassword"
+                        className="password"
                         name="password"
                         type="password"
                         placeholder="enter password"
@@ -33,7 +33,7 @@ function Register() {
                 <label>
                     *Confirm Password:
                 <input
-                        className="input inputConfirmPassword"
+                        className="confirm-password"
                         name="confirmPassword"
                         type="password"
                         placeholder="confirm password"
@@ -42,28 +42,28 @@ function Register() {
                 <label>
                     *Full name
                 <input
-                        className="input inputFullName"
+                        className="full-name"
                         type="text"
                         name="full_name"
-                        placeholder="Jon Snow"
+                        placeholder="Jane Doe"
                     />
                 </label>
                 <label>
                     *Email
                 <input
-                        className="input inputEmail"
-                        type="text"
+                        className="email"
+                        type="email"
                         name="email"
-                        placeholder="jon@winterfell.com"
+                        placeholder="jon@doe.com"
                     />
                 </label>
                 <label>
                     Phone Number
                 <input
-                        className="input inputPhoneNumber"
+                        className="phone-number"
                         type="text"
                         name="phone"
-                        placeholder="808-555-1234"
+                        placeholder="888-888-8888"
                     />
                 </label>
 
