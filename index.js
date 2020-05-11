@@ -9,12 +9,12 @@ server.use(express.json());
 
 let hikers = [
     {
-        "id": 0,
+        "id": shortid.generate(),
         "name": "Zig",
         "bio": "She's hardcore"
     },
     {
-        "id": 1,
+        "id": shortid.generate(),
         "name": "Zig",
         "bio": "She's hardcore"
     }
@@ -32,6 +32,19 @@ server.post('/api/hikers', (req, res) => {
     hikers.push(newHiker);
 
     res.status(201).json(newHiker);
+})
+
+server.delete('/api/hikers/:id', (req, res) => {
+    const { id } = req.params;
+
+    const found = hikers.find(hiker => hiker.id === id)
+
+    if(found) {
+        hikers = hikers.filter(hiker => hiker.id !== id);
+        res.status(200).json(found);
+    } else {
+        res.status(404).json({"message": "Hiker not found"})
+    }
 })
 
 server.listen(PORT, () => 
