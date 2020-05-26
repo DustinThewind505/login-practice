@@ -5,9 +5,9 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('users').insert([
-        {message: 'Ello Poppet 1', ship: 'Black Vessel'},
-        {message: 'Ello Poppet 2', ship: 'Blue Vessel'},
-        {message: 'Ello Poppet 3', ship: 'Green Vessel'}
+        {username: 'Andy', website: 'Woody'},
+        {username: 'Sid', website: 'Buzz'},
+        {username: 'Mr. Potatohead', website: "Andy's Mom"}
       ]);
     });
 };
