@@ -1,5 +1,17 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
   text-align: center;
+}
+
+h2 {
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 0.5em;
 }
 
 .App-logo {
@@ -26,9 +38,14 @@
 }
 
 .App-header section {
+  width: 40%;
+  padding: 1em 0;
   border: 1px solid black;
   background-color: cadetblue;
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-link {
@@ -66,11 +83,24 @@ button:hover {
   color: lightgreen;
 }
 
+
+.patrick-star {
+  width: 25%;
+  margin: 2em 0;
+  animation: rotate 10s linear forwards infinite;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg)
   }
 }
