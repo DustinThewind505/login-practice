@@ -2,15 +2,15 @@ import React from 'react';
 
 
 
-function CounterButtons(props) {
+function CounterButton(props) {
 
 
 
-    return(
+    return (
         <>
             <button onClick={props.onCounterChange}>{props.label}</button>
         </>
     )
 }
 
-export default CounterButtons;
+export default CounterButton;

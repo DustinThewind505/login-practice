@@ -1,5 +1,5 @@
 import React from 'react';
-import CounterButton from './counterButtons';
+import CounterButton from './counterButton';
 
 
 function Counter(props) {
@@ -11,9 +11,9 @@ function Counter(props) {
             <h2>Counter</h2>
             <p>{`Count: `}<span style={props.fontStyles}>{props.count}</span></p>
             <div>
-                <CounterButton onCounterChange={props.add} label="Add"/>
-                <CounterButton onCounterChange={props.multiply} label="Multiply"/>
-                <CounterButton onCounterChange={props.reset} label="Reset"/>
+                <CounterButton onCounterChange={props.add} label="Add" />
+                <CounterButton onCounterChange={props.multiply} label="Multiply" />
+                <CounterButton onCounterChange={props.reset} label="Reset" />
             </div>
         </>
     )
