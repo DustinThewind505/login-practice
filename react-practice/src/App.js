@@ -5,9 +5,34 @@ import Counter from './components/counter';
 import ColorPicker from './components/colorPicker';
 import HideElement from './components/hideElement';
 import InputValue from './components/inputValue';
+import UserProps from './components/userProps';
+import RandomColor from './components/randomColor';
 
 import './App.css';
 
+
+const hikers = [
+  {
+    "name": "Yoda",
+    "trail": "PCT"
+  },
+  {
+    "name": "Zig-Zag",
+    "trail": "AT"
+  },
+  {
+    "name": "Viking",
+    "trail": "AT"
+  },
+  {
+    "name": "Nilla",
+    "trail": "CDT"
+  },
+  {
+    "name": "Snow White",
+    "trail": "PCT"
+  },
+]
 
 
 
@@ -42,6 +67,17 @@ function App() {
   const [title, setTitle] = useState("Title")
   const [body, setBody] = useState("Body")
 
+  // ======== User Props ========
+  const [userInfo, setUserInfo] = useState(hikers);
+
+  // ======== Random Color ========
+  const [randomColor, setRandomColor] = useState("cadetBlue");
+
+  const changeColor = arr => {
+    setRandomColor(arr[Math.floor(Math.random() * arr.length)])
+  }
+
+
   // === Styles ===
   const fontStyles = {
     color: ""
@@ -56,7 +92,7 @@ function App() {
   }
 
   const bgStyles = {
-    background: star ? "green" : "",
+    background: randomColor,
   }
 
 
@@ -64,23 +100,33 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* ======== Counter ======== */}
-        <section>
+        <section style={bgStyles}>
           <Counter count={count} setCount={setCount} fontStyles={fontStyles} add={add} multiply={multiply} reset={reset} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Color Picker ======== */}
-        <section>
+        <section style={bgStyles}>
           <ColorPicker color={color} setColor={setColor} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Hide Element ======== */}
-        <section style={bgStyles}>
+        <section style={{ background: star ? randomColor : "", }} >
           <HideElement star={star} setStar={setStar} toggleStar={toggleStar} />
+          <img src={logo} className="App-logo" alt="logo" />
+        </section>
+        {/* ======== Random Color ======== */}
+        <section style={bgStyles}>
+          <RandomColor randomColor={randomColor} changeColor={changeColor} />
+          <img src={logo} className="App-logo" alt="logo" />
+        </section>
+        {/* ======== User Props ======== */}
+        <section>
+          <UserProps userInfo={userInfo} setUserInfo={setUserInfo} randomColor={randomColor} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Input Value ======== */}
         <section>
-          <InputValue title={title} setTitle={setTitle} body={body} setBody={setBody}/>
+          <InputValue title={title} setTitle={setTitle} body={body} setBody={setBody} randomColor={randomColor} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
       </header>

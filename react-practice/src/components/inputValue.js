@@ -9,7 +9,7 @@ function InputValue(props) {
     return (
         <>
             <h2>Input Value</h2>
-            <div className="input-value-note">
+            <div className="input-value-note" style={{backgroundColor: props.randomColor}}>
                 <p><strong>{props.title}</strong></p>
                 <p>{props.body}</p>
             </div>

@@ -8,7 +8,7 @@ function Counter(props) {
 
     return (
         <>
-            <h2>Counter</h2>
+            <h2 style={props.fontStyles}>Counter</h2>
             <p>{`Count: `}<span style={props.fontStyles}>{props.count}</span></p>
             <div>
                 <CounterButton onCounterChange={props.add} label="Add" />
