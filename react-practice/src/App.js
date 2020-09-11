@@ -8,6 +8,7 @@ import InputValue from './components/inputValue/inputValue';
 import UserProps from './components/userProps/userProps';
 import RandomColor from './components/randomColors/randomColor';
 import GhibliApi from './components/ghibliApi/ghibliAPI';
+import DogApi from './components/dogAPI/dogAPI';
 
 import './App.css';
 
@@ -102,6 +103,11 @@ function App() {
         {/* ======== Ghibli API ======== */}
         <section style={bgStyles} id="ghibli-api">
           <GhibliApi />
+          <img src={logo} className="App-logo" alt="logo" />
+        </section>
+        {/* ======== Dog API ======== */}
+        <section style={bgStyles} id="ghibli-api">
+          <DogApi />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
       </header>

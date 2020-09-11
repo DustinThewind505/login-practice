@@ -13,7 +13,6 @@ function GhibliApi() {
 
     }, [])
 
-    console.log(data)
     return (
         <>
             <h2>Ghibli API</h2>
