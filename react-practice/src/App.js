@@ -1,40 +1,15 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 
-import Counter from './components/counter';
-import ColorPicker from './components/colorPicker';
-import HideElement from './components/hideElement';
-import InputValue from './components/inputValue';
-import UserProps from './components/userProps';
-import RandomColor from './components/randomColor';
-import GhibliApi from './components/ghibliAPI';
+import Counter from './components/counter/counter';
+import ColorPicker from './components/colorPicker/colorPicker';
+import HideElement from './components/hideElement/hideElement';
+import InputValue from './components/inputValue/inputValue';
+import UserProps from './components/userProps/userProps';
+import RandomColor from './components/randomColors/randomColor';
+import GhibliApi from './components/ghibliApi/ghibliAPI';
 
 import './App.css';
-
-
-const hikers = [
-  {
-    "name": "Yoda",
-    "trail": "PCT"
-  },
-  {
-    "name": "Zig-Zag",
-    "trail": "AT"
-  },
-  {
-    "name": "Viking",
-    "trail": "AT"
-  },
-  {
-    "name": "Nilla",
-    "trail": "CDT"
-  },
-  {
-    "name": "Snow White",
-    "trail": "PCT"
-  },
-]
-
 
 
 function App() {
@@ -64,12 +39,6 @@ function App() {
     setStar(!star)
   }
 
-  // ======== Input Value ========
-  const [title, setTitle] = useState("Title")
-  const [body, setBody] = useState("Body")
-
-  // ======== User Props ========
-  const [userInfo, setUserInfo] = useState(hikers);
 
   // ======== Random Color ========
   const [randomColor, setRandomColor] = useState("cadetBlue");
@@ -122,12 +91,12 @@ function App() {
         </section>
         {/* ======== User Props ======== */}
         <section style={bgStyles}>
-          <UserProps userInfo={userInfo} setUserInfo={setUserInfo} randomColor={randomColor} />
+          <UserProps randomColor={randomColor} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Input Value ======== */}
         <section style={bgStyles}>
-          <InputValue title={title} setTitle={setTitle} body={body} setBody={setBody} randomColor={randomColor} />
+          <InputValue randomColor={randomColor} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Ghibli API ======== */}

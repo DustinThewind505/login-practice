@@ -18,7 +18,7 @@ function GhibliApi() {
         <>
             <h2>Ghibli API</h2>
             <div>
-                {data.map(movie => <p>{movie.title} Released: {movie.release_date}</p>)}
+                {data.map(movie => <p><strong>{movie.title}</strong>: Released - {movie.release_date}</p>)}
             </div>
         </>
     )

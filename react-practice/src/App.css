@@ -134,11 +134,20 @@ button:hover {
 }
 
 #ghibli-api {
-  width: 80%;
+  width: 40%;
+  padding: 0 1em;
 }
 
-.ghibli-api div {
+#ghibli-api div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#ghibli-api p {
   font-size: 0.5em;
+  margin: 1em;
+  display: flex;
+  background-color: lawngreen;
 }
 
 @keyframes App-logo-spin {
