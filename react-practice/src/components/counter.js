@@ -10,7 +10,7 @@ function Counter(props) {
         <>
             <h2 style={props.fontStyles}>Counter</h2>
             <p>{`Count: `}<span style={props.fontStyles}>{props.count}</span></p>
-            <div>
+            <div className="counter-buttons">
                 <CounterButton onCounterChange={props.add} label="Add" />
                 <CounterButton onCounterChange={props.multiply} label="Multiply" />
                 <CounterButton onCounterChange={props.reset} label="Reset" />

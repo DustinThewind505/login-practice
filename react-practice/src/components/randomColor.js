@@ -17,7 +17,7 @@ function RandomColor(props) {
     return(
         <>  
             <h2>Color Picker 2</h2>
-            <button onClick={() => props.changeColor(colors)}>ChAnGe</button>
+            <button onClick={() => props.changeColor(colors)}>Change</button>
         </>
     )
 }

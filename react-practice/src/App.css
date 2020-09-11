@@ -62,6 +62,11 @@ input {
 }
 
 button {
+  width: 75px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0.2rem;
   padding: 5px;
   font-family: fantasy;
@@ -74,6 +79,10 @@ button:hover {
   color: white;
   transform: translateY(-1px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.counter-buttons, .color-picker-buttons {
+  display: flex;
 }
 
 .blue-button:hover {
@@ -90,6 +99,11 @@ button:hover {
   background: green;
   color: lightgreen;
 }
+
+/* .random-button:hover {
+  background: black;
+  color: lawngreen;
+} */
 
 
 .patrick-star {
