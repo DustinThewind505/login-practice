@@ -7,6 +7,7 @@ import HideElement from './components/hideElement';
 import InputValue from './components/inputValue';
 import UserProps from './components/userProps';
 import RandomColor from './components/randomColor';
+import GhibliApi from './components/ghibliAPI';
 
 import './App.css';
 
@@ -120,13 +121,18 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== User Props ======== */}
-        <section>
+        <section style={bgStyles}>
           <UserProps userInfo={userInfo} setUserInfo={setUserInfo} randomColor={randomColor} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Input Value ======== */}
-        <section>
+        <section style={bgStyles}>
           <InputValue title={title} setTitle={setTitle} body={body} setBody={setBody} randomColor={randomColor} />
+          <img src={logo} className="App-logo" alt="logo" />
+        </section>
+        {/* ======== Ghibli API ======== */}
+        <section style={bgStyles} id="ghibli-api">
+          <GhibliApi />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
       </header>

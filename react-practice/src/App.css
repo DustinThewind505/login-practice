@@ -133,6 +133,14 @@ button:hover {
   margin-left: 3em;
 }
 
+#ghibli-api {
+  width: 80%;
+}
+
+.ghibli-api div {
+  font-size: 0.5em;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
