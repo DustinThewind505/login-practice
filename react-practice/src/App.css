@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 0;
+  border: 1px solid black;
   text-align: center;
   transition: all 0.2s ease-in;
 }
@@ -62,7 +62,7 @@ input {
 }
 
 button {
-  width: 75px;
+  width: 80px;
   height: 25px;
   display: flex;
   justify-content: center;
@@ -81,13 +81,13 @@ button:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.counter-buttons, .color-picker-buttons {
+.counter-buttons, .color-picker-buttons, .rick-and-morty-buttons, .dog-api-buttons {
   display: flex;
 }
 
 .blue-button:hover {
   background: blue;
-  color: lightblue;
+  color: rgb(4, 50, 66);
 }
 
 .red-button:hover {
@@ -133,17 +133,12 @@ button:hover {
   margin-left: 3em;
 }
 
-#ghibli-api {
-  width: 40%;
-  padding: 0 1em;
-}
-
-#ghibli-api div {
+.ghibli-api div {
   display: flex;
   flex-wrap: wrap;
 }
 
-#ghibli-api p {
+.ghibli-api p {
   font-size: 0.5em;
   margin: 1em;
   display: flex;

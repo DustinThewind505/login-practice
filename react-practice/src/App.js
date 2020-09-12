@@ -9,6 +9,7 @@ import UserProps from './components/userProps/userProps';
 import RandomColor from './components/randomColors/randomColor';
 import GhibliApi from './components/ghibliApi/ghibliAPI';
 import DogApi from './components/dogAPI/dogAPI';
+import RickAndMortyApi from './components/rickAndMorty/RickAndMorty';
 
 import './App.css';
 
@@ -101,13 +102,18 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Ghibli API ======== */}
-        <section style={bgStyles} id="ghibli-api">
+        <section style={bgStyles} className="ghibli-api">
           <GhibliApi />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Dog API ======== */}
-        <section style={bgStyles} id="ghibli-api">
+        <section style={bgStyles} id="dog-api">
           <DogApi />
+          <img src={logo} className="App-logo" alt="logo" />
+        </section>
+        {/* ======== Nasa API ======== */}
+        <section style={bgStyles} className="rick-and-morty-api">
+          <RickAndMortyApi />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
       </header>

@@ -13,12 +13,11 @@ function DogApi() {
 
     }, [breed])
 
-    console.log(dogPic.data)
     return (
         <>
             <h2>Dog API</h2>
             <img src={dogPic} alt="dog smiling" />
-            <div>
+            <div className="dog-api-buttons">
                 <button onClick={() => setBreed("dalmatian")}>Dalmatian</button>
                 <button onClick={() => setBreed("beagle")}>Beagle</button>
                 <button onClick={() => setBreed("rottweiler")}>Rottweiler</button>
