@@ -33,7 +33,7 @@ function UserProps(props) {
 
     return (
         <>
-            <h1>User Props</h1>
+            <h1><span style={props.fontStyles}>U</span>s<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>Props</span></h1>
             <div className="user-lists" style={{ backgroundColor: props.randomColor }}>
                 <UserName name={userInfo} />
                 <UserTrail trail={userInfo} />

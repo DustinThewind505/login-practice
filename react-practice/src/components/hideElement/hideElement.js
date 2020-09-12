@@ -4,12 +4,16 @@ import React from 'react';
 
 function HideElement(props) {
 
+  const toggleStar = () => {
+    props.setStar(!props.star)
+  }
+
 
 
     return (
         <>
-            <h2>Hide Element</h2>
-            <button onClick={props.toggleStar}>
+            <h2><span style={props.fontStyles}>Hide</span> El<span style={props.fontStyles}>e</span>m<span style={props.fontStyles}>e</span>nt</h2>
+            <button onClick={toggleStar}>
                 {props.star ? "Hide" : "Show"}
             </button>
             {

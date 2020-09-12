@@ -17,30 +17,11 @@ import './App.css';
 
 function App() {
 
-  // ======== Counter ========
-  const [count, setCount] = useState(0);
-
-  const add = () => {
-    setCount(count + 1)
-  }
-
-  const multiply = () => {
-    setCount(count * 2)
-  }
-
-  const reset = () => {
-    setCount(0)
-  }
-
   // ======== Color Picker ========
   const [color, setColor] = useState("White");
 
   // ======== Hide Element ========
   const [star, setStar] = useState(false)
-
-  const toggleStar = () => {
-    setStar(!star)
-  }
 
 
   // ======== Random Color ========
@@ -74,7 +55,7 @@ function App() {
       <header className="App-header">
         {/* ======== Counter ======== */}
         <section style={bgStyles}>
-          <Counter count={count} setCount={setCount} fontStyles={fontStyles} add={add} multiply={multiply} reset={reset} />
+          <Counter fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Color Picker ======== */}
@@ -84,7 +65,7 @@ function App() {
         </section>
         {/* ======== Hide Element ======== */}
         <section style={{ background: star ? randomColor : "", }} >
-          <HideElement star={star} setStar={setStar} toggleStar={toggleStar} fontStyles={fontStyles} />
+          <HideElement star={star} setStar={setStar} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Random Color ======== */}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-function RickAndMortyApi() {
+function RickAndMortyApi({ fontStyles }) {
     const [data, setData] = useState([]);
     const [characterNumber, setCharacterNumber] = useState(1);
 
@@ -34,7 +34,7 @@ function RickAndMortyApi() {
 
     return (
         <>
-            <h2>Rick and Morty API</h2>
+            <h2>Rick and Morty <span style={fontStyles}>API</span></h2>
             <img src={data.image} alt="morty smith" />
             <h4>{data.name}</h4>
             <div className="rick-and-morty-buttons">

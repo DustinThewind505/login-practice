@@ -16,7 +16,7 @@ function RandomColor(props) {
 
     return(
         <>  
-            <h2>Color Picker 2</h2>
+            <h2>C<span style={props.fontStyles}>o</span>l<span style={props.fontStyles}>o</span>r P<span style={props.fontStyles}>i</span>ck<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>2</span></h2>
             <button onClick={() => props.changeColor(colors)}>Change</button>
         </>
     )

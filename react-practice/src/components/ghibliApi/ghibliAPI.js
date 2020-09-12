@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 
-function GhibliApi() {
+function GhibliApi({ fontStyles }) {
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -15,7 +15,7 @@ function GhibliApi() {
 
     return (
         <>
-            <h2>Ghibli API</h2>
+            <h2>Ghibli <span style={fontStyles}>API</span></h2>
             <div>
                 {data.map(movie => <p><strong>{movie.title}</strong>: Released - {movie.release_date}</p>)}
             </div>

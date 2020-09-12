@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-function DogApi() {
+function DogApi({ fontStyles }) {
     const [dogPic, setDogPic] = useState("");
     const [breed, setBreed] = useState("dalmatian")
 
@@ -15,7 +15,7 @@ function DogApi() {
 
     return (
         <>
-            <h2>Dog API</h2>
+            <h2>Dog <span style={fontStyles}>API</span></h2>
             <img src={dogPic} alt="dog smiling" />
             <div className="dog-api-buttons">
                 <button onClick={() => setBreed("dalmatian")}>Dalmatian</button>

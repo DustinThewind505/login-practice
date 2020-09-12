@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
-function NasaApi() {
+function NasaApi({ fontStyles }) {
     const [imageObj, setImageObj] = useState("");
 
     useEffect(() => {
@@ -20,7 +20,7 @@ function NasaApi() {
 
     return (
         <>
-            <h2>Nasa API</h2>
+            <h2>Nasa <span style={fontStyles}>API</span></h2>
             <h4>{imageObj.title}</h4>
             {
                 imageObj.media_type === "video" ? <iframe src={imageObj.url} /> : <img src={imageObj.ur} />
