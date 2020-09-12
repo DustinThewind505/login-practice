@@ -10,6 +10,7 @@ import RandomColor from './components/randomColors/randomColor';
 import GhibliApi from './components/ghibliApi/ghibliAPI';
 import DogApi from './components/dogAPI/dogAPI';
 import RickAndMortyApi from './components/rickAndMorty/RickAndMorty';
+import NasaApi from './components/nasaApi/nasaApi';
 
 import './App.css';
 
@@ -83,37 +84,42 @@ function App() {
         </section>
         {/* ======== Hide Element ======== */}
         <section style={{ background: star ? randomColor : "", }} >
-          <HideElement star={star} setStar={setStar} toggleStar={toggleStar} />
+          <HideElement star={star} setStar={setStar} toggleStar={toggleStar} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Random Color ======== */}
         <section style={bgStyles}>
-          <RandomColor randomColor={randomColor} changeColor={changeColor} />
+          <RandomColor randomColor={randomColor} changeColor={changeColor} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== User Props ======== */}
         <section style={bgStyles}>
-          <UserProps randomColor={randomColor} />
+          <UserProps randomColor={randomColor} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Input Value ======== */}
         <section style={bgStyles}>
-          <InputValue randomColor={randomColor} />
+          <InputValue randomColor={randomColor} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Ghibli API ======== */}
         <section style={bgStyles} className="ghibli-api">
-          <GhibliApi />
+          <GhibliApi fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Dog API ======== */}
         <section style={bgStyles} id="dog-api">
-          <DogApi />
+          <DogApi fontStyles={fontStyles} />
+          <img src={logo} className="App-logo" alt="logo" />
+        </section>
+        {/* ======== Rick and Morty API ======== */}
+        <section style={bgStyles} className="rick-and-morty-api">
+          <RickAndMortyApi fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
         {/* ======== Nasa API ======== */}
-        <section style={bgStyles} className="rick-and-morty-api">
-          <RickAndMortyApi />
+        <section style={bgStyles} className="nasa-api">
+          <NasaApi fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
         </section>
       </header>

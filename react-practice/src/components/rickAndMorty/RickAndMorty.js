@@ -32,10 +32,9 @@ function RickAndMortyApi() {
 
     }, [characterNumber]);
 
-    console.log("Data:", data)
     return (
         <>
-            <h1>Rick and Morty API</h1>
+            <h2>Rick and Morty API</h2>
             <img src={data.image} alt="morty smith" />
             <h4>{data.name}</h4>
             <div className="rick-and-morty-buttons">

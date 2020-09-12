@@ -145,6 +145,11 @@ button:hover {
   background-color: lawngreen;
 }
 
+.nasa-api p {
+  font-size: 0.5em;
+  margin: 1em;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
