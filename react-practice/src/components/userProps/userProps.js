@@ -26,7 +26,7 @@ const hikers = [
 ]
 
 function UserProps(props) {
-    const [userInfo, setUserInfo] = useState(hikers);
+    const [userInfo] = useState(hikers);
 
 
 

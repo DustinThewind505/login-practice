@@ -23,7 +23,7 @@ function NasaApi({ fontStyles }) {
             <h2>Nasa <span style={fontStyles}>API</span></h2>
             <h4>{imageObj.title}</h4>
             {
-                imageObj.media_type === "video" ? <iframe src={imageObj.url} /> : <img src={imageObj.ur} />
+                imageObj.media_type === "video" ? <iframe src={imageObj.url} title={imageObj.title} /> : <img src={imageObj.ur} alt={imageObj.title}/>
             }
             <p>{imageObj.explanation}</p>
         </>
