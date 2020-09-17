@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 
-import { Card } from 'reactstrap';
+import { Card, Container, Row, Col } from 'reactstrap';
 
 import Counter from './components/counter/counter';
 import ColorPicker from './components/colorPicker/colorPicker';
@@ -55,56 +55,80 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* ======== Counter ======== */}
-        <Card style={bgStyles}>
-          <Counter fontStyles={fontStyles} />
-          <img src={logo} className="App-logo" alt="logo" />
-        </Card>
-        {/* ======== Color Picker ======== */}
-        <Card style={bgStyles}>
-          <ColorPicker color={color} setColor={setColor} fontStyles={fontStyles} />
-          <img src={logo} className="App-logo" alt="logo" />
-        </Card>
-        {/* ======== Hide Element ======== */}
-        <Card style={{ background: star ? randomColor : "", }} >
-          <HideElement star={star} setStar={setStar} fontStyles={fontStyles} />
-          <img src={logo} className="App-logo" alt="logo" />
-        </Card>
-        {/* ======== Random Color ======== */}
-        <Card style={bgStyles}>
-          <RandomColor randomColor={randomColor} changeColor={changeColor} fontStyles={fontStyles} />
-          <img src={logo} className="App-logo" alt="logo" />
-        </Card>
-        {/* ======== User Props ======== */}
-        <Card style={bgStyles}>
-          <UserProps randomColor={randomColor} fontStyles={fontStyles} />
-          <img src={logo} className="App-logo" alt="logo" />
-        </Card>
-        {/* ======== Input Value ======== */}
-        <Card style={bgStyles}>
-          <InputValue randomColor={randomColor} fontStyles={fontStyles} />
-          <img src={logo} className="App-logo" alt="logo" />
-        </Card>
-        {/* ======== Ghibli API ======== */}
-        <Card style={bgStyles} className="ghibli-api">
-          <GhibliApi fontStyles={fontStyles} />
-          <img src={logo} className="App-logo" alt="logo" />
-        </Card>
-        {/* ======== Dog API ======== */}
-        <Card style={bgStyles} id="dog-api">
-          <DogApi fontStyles={fontStyles} />
-          <img src={logo} className="App-logo" alt="logo" />
-        </Card>
-        {/* ======== Rick and Morty API ======== */}
-        <Card style={bgStyles} className="rick-and-morty-api">
-          <RickAndMortyApi fontStyles={fontStyles} />
-          <img src={logo} className="App-logo" alt="logo" />
-        </Card>
-        {/* ======== Nasa API ======== */}
-        <Card style={bgStyles} className="nasa-api">
-          <NasaApi fontStyles={fontStyles} />
-          <img src={logo} className="App-logo" alt="logo" />
-        </Card>
+        <Container>
+          <Row>
+            {/* ======== Counter ======== */}
+            <Col sm="6" md="4" xl="6">
+              <Card style={bgStyles}>
+                <Counter fontStyles={fontStyles} />
+                <img src={logo} className="App-logo" alt="logo" />
+              </Card>
+            </Col>
+            {/* ======== Color Picker ======== */}
+            <Col sm="6" md="4" xl="6">
+              <Card style={bgStyles}>
+                <ColorPicker color={color} setColor={setColor} fontStyles={fontStyles} />
+                <img src={logo} className="App-logo" alt="logo" />
+              </Card>
+            </Col>
+            {/* ======== Hide Element ======== */}
+            <Col sm="6" md="4" xl="6">
+              <Card style={{ background: star ? randomColor : "", }} >
+                <HideElement star={star} setStar={setStar} fontStyles={fontStyles} />
+                <img src={logo} className="App-logo" alt="logo" />
+              </Card>
+            </Col>
+            {/* ======== Random Color ======== */}
+            <Col sm="6" md="4" xl="6">
+              <Card style={bgStyles}>
+                <RandomColor randomColor={randomColor} changeColor={changeColor} fontStyles={fontStyles} />
+                <img src={logo} className="App-logo" alt="logo" />
+              </Card>
+            </Col>
+            {/* ======== User Props ======== */}
+            <Col sm="6" md="4" xl="6">
+              <Card style={bgStyles}>
+                <UserProps randomColor={randomColor} fontStyles={fontStyles} />
+                <img src={logo} className="App-logo" alt="logo" />
+              </Card>
+            </Col>
+            {/* ======== Input Value ======== */}
+            <Col sm="6" md="4" xl="6">
+              <Card style={bgStyles}>
+                <InputValue randomColor={randomColor} fontStyles={fontStyles} />
+                <img src={logo} className="App-logo" alt="logo" />
+              </Card>
+            </Col>
+            {/* ======== Ghibli API ======== */}
+            <Col sm="6" md="4" xl="6">
+              <Card style={bgStyles} className="ghibli-api">
+                <GhibliApi fontStyles={fontStyles} />
+                <img src={logo} className="App-logo" alt="logo" />
+              </Card>
+            </Col>
+            {/* ======== Dog API ======== */}
+            <Col sm="6" md="4" xl="6">
+              <Card style={bgStyles} id="dog-api">
+                <DogApi fontStyles={fontStyles} />
+                <img src={logo} className="App-logo" alt="logo" />
+              </Card>
+            </Col>
+            {/* ======== Rick and Morty API ======== */}
+            <Col sm="6" md="4" xl="6">
+              <Card style={bgStyles} className="rick-and-morty-api">
+                <RickAndMortyApi fontStyles={fontStyles} />
+                <img src={logo} className="App-logo" alt="logo" />
+              </Card>
+            </Col>
+            {/* ======== Nasa API ======== */}
+            <Col sm="6" md="4" xl="6">
+              <Card style={bgStyles} className="nasa-api">
+                <NasaApi fontStyles={fontStyles} />
+                <img src={logo} className="App-logo" alt="logo" />
+              </Card>
+            </Col>
+          </Row>
+        </Container>
       </header>
     </div>
   );
