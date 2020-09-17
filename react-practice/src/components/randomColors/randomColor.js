@@ -10,16 +10,18 @@ const colors = [
     "#003D19",
     "#6E91A1",
     "#552D00"
-  ];
+];
 
 function RandomColor(props) {
 
 
 
-    return(
-        <>  
+    return (
+        <>
             <CardHeader>C<span style={props.fontStyles}>o</span>l<span style={props.fontStyles}>o</span>r P<span style={props.fontStyles}>i</span>ck<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>2</span></CardHeader>
-            <Button onClick={() => props.changeColor(colors)}>Change</Button>
+            <div>
+                <Button className="random-button" onClick={() => props.changeColor(colors)}>Change</Button>
+            </div>
         </>
     )
 }

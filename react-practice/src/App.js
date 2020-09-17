@@ -108,7 +108,7 @@ function App() {
             </Col>
             {/* ======== Dog API ======== */}
             <Col sm="6" md="4" xl="6">
-              <Card style={bgStyles} id="dog-api">
+              <Card className='dog-api' style={bgStyles} id="dog-api">
                 <DogApi fontStyles={fontStyles} />
                 <img src={logo} className="App-logo" alt="logo" />
               </Card>

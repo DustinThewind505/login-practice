@@ -1,4 +1,4 @@
-/* * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -7,17 +7,17 @@
   transition: all 0.2s ease-in;
 }
 
-h2 {
+/* h2 {
   margin-bottom: 0.5em;
-}
+} */
 
-p {
+/* p {
   margin-bottom: 0.5em;
-}
+} */
 
-input {
-  /* width: 50%; */
-  /* height: 3vh;
+/* input {
+  width: 50%;
+  height: 3vh;
   margin: 1em 0;
 } */
 
@@ -35,16 +35,12 @@ input {
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 10% 0;
 }
 
-.App-header section {
+/* .App-header section {
   width: 40%;
   height: 80vh;
   margin-top: 1em;
@@ -55,11 +51,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.App-link {
-  color: #61dafb;
-}
+} */
 
 /* button {
   width: 80px;
@@ -100,10 +92,10 @@ input {
   color: lightgreen;
 }
 
-/* .random-button:hover {
+.random-button:hover {
   background: black;
   color: lawngreen;
-} */
+}
 
 
 .patrick-star {
@@ -112,7 +104,7 @@ input {
   animation: rotate 10s linear forwards infinite;
 }
 
-/* .input-value-note {
+.input-value-note {
   width: 90%;
   background-color: green;
   padding: 0.7em;
@@ -126,7 +118,7 @@ input {
 }
 
 .user-lists ul {
-  width: 25%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -136,19 +128,22 @@ input {
 .ghibli-api div {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.ghibli-api p {
-  font-size: 0.5em;
-  margin: 1em;
-  display: flex;
-  background-color: lawngreen;
+.dog-api img {
+  width: 100%;
+  height: 50vh;
 }
 
 .nasa-api p {
   font-size: 0.5em;
   margin: 1em;
-} */
+}
+
+.card {
+  height: 1100px;
+}
 
 @keyframes App-logo-spin {
   from {
