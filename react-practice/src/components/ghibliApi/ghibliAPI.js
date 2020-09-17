@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CardHeader, CardBody } from 'reactstrap';
 import axios from 'axios';
 
 
@@ -15,10 +16,12 @@ function GhibliApi({ fontStyles }) {
 
     return (
         <>
-            <h2>Ghibli <span style={fontStyles}>API</span></h2>
+            <CardHeader>Ghibli <span style={fontStyles}>API</span></CardHeader>
+            <CardBody>
             <div>
                 {data.map(movie => <p><strong>{movie.title}</strong>: Released - {movie.release_date}</p>)}
             </div>
+            </CardBody>
         </>
     )
 }

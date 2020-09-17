@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 
+import { Card } from 'reactstrap';
+
 import Counter from './components/counter/counter';
 import ColorPicker from './components/colorPicker/colorPicker';
 import HideElement from './components/hideElement/hideElement';
@@ -54,55 +56,55 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* ======== Counter ======== */}
-        <section style={bgStyles}>
+        <Card style={bgStyles}>
           <Counter fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
-        </section>
+        </Card>
         {/* ======== Color Picker ======== */}
-        <section style={bgStyles}>
+        <Card style={bgStyles}>
           <ColorPicker color={color} setColor={setColor} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
-        </section>
+        </Card>
         {/* ======== Hide Element ======== */}
-        <section style={{ background: star ? randomColor : "", }} >
+        <Card style={{ background: star ? randomColor : "", }} >
           <HideElement star={star} setStar={setStar} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
-        </section>
+        </Card>
         {/* ======== Random Color ======== */}
-        <section style={bgStyles}>
+        <Card style={bgStyles}>
           <RandomColor randomColor={randomColor} changeColor={changeColor} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
-        </section>
+        </Card>
         {/* ======== User Props ======== */}
-        <section style={bgStyles}>
+        <Card style={bgStyles}>
           <UserProps randomColor={randomColor} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
-        </section>
+        </Card>
         {/* ======== Input Value ======== */}
-        <section style={bgStyles}>
+        <Card style={bgStyles}>
           <InputValue randomColor={randomColor} fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
-        </section>
+        </Card>
         {/* ======== Ghibli API ======== */}
-        <section style={bgStyles} className="ghibli-api">
+        <Card style={bgStyles} className="ghibli-api">
           <GhibliApi fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
-        </section>
+        </Card>
         {/* ======== Dog API ======== */}
-        <section style={bgStyles} id="dog-api">
+        <Card style={bgStyles} id="dog-api">
           <DogApi fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
-        </section>
+        </Card>
         {/* ======== Rick and Morty API ======== */}
-        <section style={bgStyles} className="rick-and-morty-api">
+        <Card style={bgStyles} className="rick-and-morty-api">
           <RickAndMortyApi fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
-        </section>
+        </Card>
         {/* ======== Nasa API ======== */}
-        <section style={bgStyles} className="nasa-api">
+        <Card style={bgStyles} className="nasa-api">
           <NasaApi fontStyles={fontStyles} />
           <img src={logo} className="App-logo" alt="logo" />
-        </section>
+        </Card>
       </header>
     </div>
   );

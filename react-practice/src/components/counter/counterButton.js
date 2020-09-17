@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Button } from 'reactstrap';
 
 
 function CounterButton(props) {
@@ -8,7 +8,7 @@ function CounterButton(props) {
 
     return (
         <>
-            <button onClick={props.onCounterChange}>{props.label}</button>
+            <Button onClick={props.onCounterChange}>{props.label}</Button>
         </>
     )
 }

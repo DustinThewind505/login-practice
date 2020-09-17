@@ -1,4 +1,6 @@
 import React from 'react';
+import { CardHeader } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 const colors = [
     "#FFBAAA",
@@ -16,8 +18,8 @@ function RandomColor(props) {
 
     return(
         <>  
-            <h2>C<span style={props.fontStyles}>o</span>l<span style={props.fontStyles}>o</span>r P<span style={props.fontStyles}>i</span>ck<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>2</span></h2>
-            <button onClick={() => props.changeColor(colors)}>Change</button>
+            <CardHeader>C<span style={props.fontStyles}>o</span>l<span style={props.fontStyles}>o</span>r P<span style={props.fontStyles}>i</span>ck<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>2</span></CardHeader>
+            <Button onClick={() => props.changeColor(colors)}>Change</Button>
         </>
     )
 }

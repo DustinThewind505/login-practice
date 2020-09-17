@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -17,14 +17,14 @@ p {
 
 input {
   /* width: 50%; */
-  height: 3vh;
+  /* height: 3vh;
   margin: 1em 0;
-}
+} */
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} 
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -61,7 +61,7 @@ input {
   color: #61dafb;
 }
 
-button {
+/* button {
   width: 80px;
   height: 25px;
   display: flex;
@@ -72,22 +72,22 @@ button {
   font-family: fantasy;
   border: 2px solid #be9c38;
   border-radius: 2px;
-}
+} */
 
-button:hover {
+/* button:hover {
   background: #be9c38;
   color: white;
   transform: translateY(-1px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+} */
 
-.counter-buttons, .color-picker-buttons, .rick-and-morty-buttons, .dog-api-buttons {
+/* .counter-buttons, .color-picker-buttons, .rick-and-morty-buttons, .dog-api-buttons {
   display: flex;
-}
+} */
 
 .blue-button:hover {
   background: blue;
-  color: rgb(4, 50, 66);
+  color: lightskyblue;
 }
 
 .red-button:hover {
@@ -112,7 +112,7 @@ button:hover {
   animation: rotate 10s linear forwards infinite;
 }
 
-.input-value-note {
+/* .input-value-note {
   width: 90%;
   background-color: green;
   padding: 0.7em;
@@ -148,7 +148,7 @@ button:hover {
 .nasa-api p {
   font-size: 0.5em;
   margin: 1em;
-}
+} */
 
 @keyframes App-logo-spin {
   from {

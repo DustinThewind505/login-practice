@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { CardHeader, CardBody, CardText, CardTitle } from 'reactstrap';
 import axios from 'axios';
+import { Alert } from 'reactstrap';
 
 
 function NasaApi({ fontStyles }) {
@@ -20,12 +22,17 @@ function NasaApi({ fontStyles }) {
 
     return (
         <>
-            <h2>Nasa <span style={fontStyles}>API</span></h2>
-            <h4>{imageObj.title}</h4>
+            <CardHeader>Nasa <span style={fontStyles}>API</span></CardHeader>
+            <CardBody>
+            <Alert color="primary">
+                This is a primary alert — check it out!
+            </Alert>
+            <CardTitle>{imageObj.title}</CardTitle>
             {
-                imageObj.media_type === "video" ? <iframe src={imageObj.url} title={imageObj.title} /> : <img src={imageObj.ur} alt={imageObj.title}/>
+                imageObj.media_type === "video" ? <iframe src={imageObj.url} title={imageObj.title} /> : <img src={imageObj.ur} alt={imageObj.title} />
             }
-            <p>{imageObj.explanation}</p>
+            <CardText>{imageObj.explanation}</CardText>
+            </CardBody>
         </>
     )
 }

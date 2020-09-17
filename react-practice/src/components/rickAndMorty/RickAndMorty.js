@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { CardHeader, CardBody, CardTitle } from 'reactstrap';
+import { Button } from 'reactstrap';
 import axios from 'axios';
 
 
@@ -34,14 +36,16 @@ function RickAndMortyApi({ fontStyles }) {
 
     return (
         <>
-            <h2>Rick and Morty <span style={fontStyles}>API</span></h2>
+            <CardHeader>Rick and Morty <span style={fontStyles}>API</span></CardHeader>
+            <CardBody>
             <img src={data.image} alt="morty smith" />
-            <h4>{data.name}</h4>
+            <CardTitle>{data.name}</CardTitle>
             <div className="rick-and-morty-buttons">
-                <button onClick={handleNext}>Next</button>
-                <button onClick={handlePrevious}>Previous</button>
-                <button onClick={handleSkipFive}>Next Page</button>
+                <Button onClick={handleNext}>Next</Button>
+                <Button onClick={handlePrevious}>Previous</Button>
+                <Button onClick={handleSkipFive}>Next Page</Button>
             </div>
+            </CardBody>
         </>
     )
 }

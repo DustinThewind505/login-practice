@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import UserName from './userPropsName';
 import UserTrail from './userPropsTrail';
+import { CardHeader, CardBody } from 'reactstrap';
 
 const hikers = [
     {
@@ -33,11 +34,13 @@ function UserProps(props) {
 
     return (
         <>
-            <h1><span style={props.fontStyles}>U</span>s<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>Props</span></h1>
+            <CardHeader><span style={props.fontStyles}>U</span>s<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>Props</span></CardHeader>
+            <CardBody>
             <div className="user-lists" style={{ backgroundColor: props.randomColor }}>
                 <UserName name={userInfo} />
                 <UserTrail trail={userInfo} />
             </div>
+            </CardBody>
         </>
     )
 }

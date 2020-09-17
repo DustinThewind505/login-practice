@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { CardHeader, CardBody } from 'reactstrap';
+import { Button } from 'reactstrap';
 import axios from 'axios';
 
 
@@ -15,14 +17,16 @@ function DogApi({ fontStyles }) {
 
     return (
         <>
-            <h2>Dog <span style={fontStyles}>API</span></h2>
+            <CardHeader>Dog <span style={fontStyles}>API</span></CardHeader>
+            <CardBody>
             <img src={dogPic} alt="dog smiling" />
             <div className="dog-api-buttons">
-                <button onClick={() => setBreed("dalmatian")}>Dalmatian</button>
-                <button onClick={() => setBreed("beagle")}>Beagle</button>
-                <button onClick={() => setBreed("rottweiler")}>Rottweiler</button>
-                <button onClick={() => setBreed("african")}>African</button>
+                <Button onClick={() => setBreed("dalmatian")}>Dalmatian</Button>
+                <Button onClick={() => setBreed("beagle")}>Beagle</Button>
+                <Button onClick={() => setBreed("rottweiler")}>Rottweiler</Button>
+                <Button onClick={() => setBreed("african")}>African</Button>
             </div>
+            </CardBody>
         </>
     )
 }
