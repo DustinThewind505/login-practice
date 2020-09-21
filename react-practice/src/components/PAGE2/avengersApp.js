@@ -1,23 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { avengersData } from './avengersData';
 import './avengersApp.css';
 
 
 
-function AvengersApp(){
+function AvengersApp(props){
 
 
 
     return(
         <div className='characters-list-wrapper'>
-          {avengersData.map(avenger => 
-            <Link to={`/avengers/${avenger.id}`} className='character-card' key={avenger.id}>
+          {props.avengersData.map(avenger => 
+            <div to={`/avengers/${avenger.id}`} className='character-card' key={avenger.id} onClick={() => props.history.push(`avengers/${avenger.id}`)}>
               <img src={avenger.thumbnail} alt={avenger.name} />
               <h2>{avenger.name}</h2>
               <h3>({avenger.nickname})</h3>
-            </Link>
+            </div>
           )}
         </div>
     )

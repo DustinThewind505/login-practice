@@ -5,6 +5,7 @@ import PageOne from './components/PAGE1/page1';
 import AvengersApp from './components/PAGE2/avengersApp';
 import Avenger from './components/PAGE2/avengerBio';
 
+import { avengersData } from './components/PAGE2/avengersData';
 import './App.css';
 import logo from './logo.svg';
 
@@ -31,8 +32,8 @@ function App() {
         </ul>
         <Route exact path='/' component={Home} />
         <Route path='/react-components' component={PageOne} />
-        <Route exact path='/avengers' component={AvengersApp} />
-        <Route path='/avengers/:id' component={Avenger} />
+        <Route exact path='/avengers' render={props => <AvengersApp {...props} avengersData={avengersData} />} />
+        <Route path='/avengers/:id' render={props => <Avenger {...props} avengersData={avengersData} />} />
       </header>
     </div>
   );
