@@ -3,10 +3,19 @@ import { Route, Link } from 'react-router-dom';
 
 import PageOne from './components/PAGE1/page1';
 import AvengersApp from './components/PAGE2/avengersApp';
+import Avenger from './components/PAGE2/avengerBio';
 
 import './App.css';
+import logo from './logo.svg';
 
-const Home = props => <h1>Home Component</h1>;
+const Home = props => {
+  return <div>
+    <img src='http://cdn2.hubspot.net/hub/189441/file-476147663-png/images/icons/html-code-brackets.png?t=1390636021000' alt="empty code brackets" />
+    
+    <h1>Home Component</h1>
+    <img src={logo} className="App-logo" alt="logo" />
+  </div>
+};
 
 
 function App() {
@@ -17,12 +26,13 @@ function App() {
       <header className="App-header">
         <ul>
           <li><Link to='/'>Home</Link></li>
-          <li><Link to='/page1'>Page One</Link></li>
-          <li><Link to='/page2' >Avengers APP</Link></li>
+          <li><Link to='/react-components'>React Components</Link></li>
+          <li><Link to='/avengers' >Avengers APP</Link></li>
         </ul>
         <Route exact path='/' component={Home} />
-        <Route path='/page1' component={PageOne} />
-        <Route path='/page2' component={AvengersApp} />
+        <Route path='/react-components' component={PageOne} />
+        <Route exact path='/avengers' component={AvengersApp} />
+        <Route path='/avengers/:id' component={Avenger} />
       </header>
     </div>
   );

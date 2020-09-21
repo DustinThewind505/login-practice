@@ -37,7 +37,7 @@
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 10% 0;
+  padding: 1% 0 10%;
 }
 
 /* .App-header section {
@@ -76,6 +76,11 @@
 /* .counter-buttons, .color-picker-buttons, .rick-and-morty-buttons, .dog-api-buttons {
   display: flex;
 } */
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .blue-button:hover {
   background: blue;
