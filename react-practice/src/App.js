@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 import PageOne from './components/PAGE1/page1';
 import AvengersApp from './components/PAGE2/avengersApp';
@@ -26,9 +26,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/react-components'>React Components</Link></li>
-          <li><Link to='/avengers' >Avengers APP</Link></li>
+          <li className='nav-buttons'><NavLink exact to='/'>Home</NavLink></li>
+          <li className='nav-buttons'><NavLink to='/react-components'>React Components</NavLink></li>
+          <li className='nav-buttons'><NavLink to='/avengers' >Avengers APP</NavLink></li>
         </ul>
         <Route exact path='/' component={Home} />
         <Route path='/react-components' component={PageOne} />
