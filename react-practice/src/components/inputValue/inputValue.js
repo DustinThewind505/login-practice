@@ -7,30 +7,33 @@ import { CardHeader, FormText, Form, Label, Input, Button } from 'reactstrap';
 
 
 function InputValue(props) {
-    const [title, setTitle] = useState("");
-    const [body, setBody] = useState("");
-    const [dropdown, setDropdown] = useState("");
-    const [happyCheckbox, setHappyCheckbox] = useState(false);
+
+    const [formData, setFormData] = useState({
+        "title": "",
+        "body": "",
+        "dropdown": "",
+        "happyCheckbox": false,
+    })
+
+    const { title, body, dropdown, happyCheckbox } = formData;
 
     const handleSubmit = (event) => {
         event.preventDefault();
         // axios.get(`?title=${title}&body=${body}`)
     }
 
-    const handleTitle = event => {
-        setTitle(event.target.value)
+    const handleInputChange = event => {
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.value
+        })
     }
 
-    const handleBody = event => {
-        setBody(event.target.value);
-    }
-
-    const handleTextarea = event => {
-        setDropdown(event.target.value);
-    }
-
-    const handleHappyCheckbox = event => {
-        setHappyCheckbox(event.target.checked);
+    const handleCheckboxChange = event => {
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.checked
+        })
     }
 
 
@@ -45,17 +48,17 @@ function InputValue(props) {
                     <FormText>Are you happy? {happyCheckbox ? "Yes" : "No"}</FormText>
                 </div>
                 <Label>
-                    <Input type="text" id="inputTitle" onChange={handleTitle} placeholder="Enter Title" />
+                    <Input type="text" name="title" id="inputTitle" onChange={handleInputChange} placeholder="Enter Title" />
                 </Label>
                 <br />
                 <br />
                 <Label>
-                    <Input type="textarea" id="textareaBody" onChange={handleBody} placeholder="Enter Body" />
+                    <Input type="textarea" name="body" id="textareaBody" onChange={handleInputChange} placeholder="Enter Body" />
                 </Label>
                 <br />
                 <br />
                 <Label>
-                    <Input type="select" id="dropdownMonth" onChange={handleTextarea} style={props.fontStyles} >
+                    <Input type="select" name="dropdown" id="dropdownMonth" onChange={handleInputChange} style={props.fontStyles} >
                         <option></option>
                         <option>April</option>
                         <option>May</option>
@@ -65,7 +68,7 @@ function InputValue(props) {
                 <br />
                 <br />
                 <Label>
-                    Happy: <Input type="checkbox" id="checkboxHappy" onChange={handleHappyCheckbox} />
+                    Happy: <Input type="checkbox" name="happyCheckbox" id="checkboxHappy" onChange={handleCheckboxChange} />
                 </Label>
                 <br />
                 <br />
