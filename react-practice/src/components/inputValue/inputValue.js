@@ -12,7 +12,7 @@ function InputValue(props) {
         "title": "",
         "body": "",
         "dropdown": "",
-        "happyCheckbox": false,
+        "happyCheckbox": false
     })
 
     const { title, body, dropdown, happyCheckbox } = formData;
@@ -20,6 +20,13 @@ function InputValue(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         // axios.get(`?title=${title}&body=${body}`)
+        alert(`FORM:\n${formData.title}\n${formData.body}\n${formData.dropdown}\n${formData.title ? "I'm happy" : "I'm NOT happy"}`);
+        setFormData({
+            "title": "",
+            "body": "",
+            "dropdown": "",
+            "happyCheckbox": false
+        })
     }
 
     const handleInputChange = event => {
@@ -48,17 +55,17 @@ function InputValue(props) {
                     <FormText>Are you happy? {happyCheckbox ? "Yes" : "No"}</FormText>
                 </div>
                 <Label>
-                    <Input type="text" name="title" id="inputTitle" onChange={handleInputChange} placeholder="Enter Title" />
+                    <Input type="text" name="title" id="inputTitle" value={formData.title} onChange={handleInputChange} placeholder="Enter Title" />
                 </Label>
                 <br />
                 <br />
                 <Label>
-                    <Input type="textarea" name="body" id="textareaBody" onChange={handleInputChange} placeholder="Enter Body" />
+                    <Input type="textarea" name="body" id="textareaBody" value={formData.body} onChange={handleInputChange} placeholder="Enter Body" />
                 </Label>
                 <br />
                 <br />
                 <Label>
-                    <Input type="select" name="dropdown" id="dropdownMonth" onChange={handleInputChange} style={props.fontStyles} >
+                    <Input type="select" name="dropdown" id="dropdownMonth" value={formData.dropdown} onChange={handleInputChange} style={props.fontStyles} >
                         <option></option>
                         <option>April</option>
                         <option>May</option>

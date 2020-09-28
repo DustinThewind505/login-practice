@@ -13,6 +13,7 @@ import GhibliApi from '../ghibliApi/ghibliAPI';
 import DogApi from '../dogAPI/dogAPI';
 import RickAndMortyApi from '../rickAndMorty/RickAndMorty';
 import NasaApi from '../nasaApi/nasaApi';
+import FriendsForm from '../friendsForm/friendsForm';
 
 
 function PageOne() {
@@ -120,6 +121,13 @@ function PageOne() {
                 <Col sm="6" md="4" xl="6">
                     <Card style={bgStyles} className="nasa-api">
                         <NasaApi fontStyles={fontStyles} />
+                        <img src={logo} className="App-logo" alt="logo" />
+                    </Card>
+                </Col>
+                {/* ========Freinds Form ======== */}
+                <Col sm="6" md="4" xl="6">
+                    <Card style={bgStyles} className="friends-form">
+                        <FriendsForm fontStyles={fontStyles} />
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>
                 </Col>
