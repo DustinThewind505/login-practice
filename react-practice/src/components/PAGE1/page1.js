@@ -3,17 +3,17 @@ import logo from '../../logo.svg';
 
 import { Card, Container, Row, Col } from 'reactstrap';
 
-import Counter from '../counter/counter';
-import ColorPicker from '../colorPicker/colorPicker';
-import HideElement from '../hideElement/hideElement';
-import InputValue from '../inputValue/inputValue';
-import UserProps from '../userProps/userProps';
-import RandomColor from '../randomColors/randomColor';
-import GhibliApi from '../ghibliApi/ghibliAPI';
-import DogApi from '../dogAPI/dogAPI';
-import RickAndMortyApi from '../rickAndMorty/RickAndMorty';
-import NasaApi from '../nasaApi/nasaApi';
-import FriendsForm from '../friendsForm/friendsForm';
+import Counter from './counter/counter';
+import ColorPicker from './colorPicker/colorPicker';
+import HideElement from './hideElement/hideElement';
+import InputValue from './inputValue/inputValue';
+import UserProps from './userProps/userProps';
+import RandomColor from './randomColors/randomColor';
+import GhibliApi from './ghibliApi/ghibliAPI';
+import DogApi from './dogAPI/dogAPI';
+import RickAndMortyApi from './rickAndMorty/RickAndMorty';
+import NasaApi from './nasaApi/nasaApi';
+import FriendsForm from './friendsForm/friendsForm';
 
 
 function PageOne() {
