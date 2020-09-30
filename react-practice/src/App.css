@@ -122,6 +122,12 @@ ul {
   background-color: lime;
 }
 
+.complete {
+  background-color: black;
+  columns: white;
+  text-decoration: line-through;
+}
+
 .user-lists {
   width: 90%;
   display: flex;

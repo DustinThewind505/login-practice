@@ -26,6 +26,9 @@ function InputValue(props) {
         const newNote = {
             "title": formData.title,
             "body": formData.body,
+            "dropdown": formData.dropdown,
+            "happyCheckbox": formData.happyCheckbox,
+            "complete": false
         }
 
         setNotes([...notes, newNote])
@@ -50,6 +53,16 @@ function InputValue(props) {
             ...formData,
             [event.target.name]: event.target.checked
         })
+    }
+
+    const toggleComplete = title => {
+        setNotes(notes.map(element => {
+            if(element.title === title){
+                return {...element, complete: !element.complete}
+            } else {
+                return element
+            }
+        }))
     }
 
 
@@ -87,9 +100,11 @@ function InputValue(props) {
                 <Button>Submit</Button>
             </Form>
             {notes.map(note =>
-                <div className="inputValue-note">
+                <div className={`inputValue-note ${note.complete ? "complete" : ""}`} onClick={() => toggleComplete(note.title)}>
                     <h2>{note.title}</h2>
                     <p>{note.body}</p>
+                    <p>{note.dropdown}</p>
+                    <p>{note.happyCheckbox ? "I believe in me" : "I believe in you"}</p>
                 </div>
             )}
         </>
