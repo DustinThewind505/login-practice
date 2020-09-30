@@ -65,6 +65,10 @@ function InputValue(props) {
         }))
     }
 
+    const clearComplete = () => {
+        setNotes(notes.filter(element => element.complete === false))
+    }
+
 
     return (
         <>
@@ -107,6 +111,7 @@ function InputValue(props) {
                     <p>{note.happyCheckbox ? "I believe in me" : "I believe in you"}</p>
                 </div>
             )}
+            <Button onClick={clearComplete} >Clear</Button>
         </>
     )
 }
