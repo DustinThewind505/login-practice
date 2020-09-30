@@ -7,6 +7,7 @@ import { CardHeader, FormText, Form, Label, Input, Button } from 'reactstrap';
 
 
 function InputValue(props) {
+    const [notes, setNotes] = useState([])
 
     const [formData, setFormData] = useState({
         "title": "",
@@ -21,6 +22,14 @@ function InputValue(props) {
         event.preventDefault();
         // axios.get(`?title=${title}&body=${body}`)
         alert(`FORM:\n${formData.title}\n${formData.body}\n${formData.dropdown}\n${formData.title ? "I'm happy" : "I'm NOT happy"}`);
+
+        const newNote = {
+            "title": formData.title,
+            "body": formData.body,
+        }
+
+        setNotes([...notes, newNote])
+
         setFormData({
             "title": "",
             "body": "",
@@ -47,8 +56,8 @@ function InputValue(props) {
     return (
         <>
             <CardHeader><span style={props.fontStyles}>Input</span> V<span style={props.fontStyles}>a</span>l<span style={props.fontStyles}>u</span><span style={props.fontStyles}>e</span></CardHeader>
-            <Form onSubmit={handleSubmit}>
-                <div className="input-value-note" style={{ backgroundColor: props.randomColor }}>
+            <Form onSubmit={handleSubmit} className="input-value-note" >
+                <div style={{ backgroundColor: props.randomColor }}>
                     <FormText><strong>{title || "Title"}</strong></FormText>
                     <FormText>{body || "Body"}</FormText>
                     <FormText style={props.fontStyles}>{dropdown || "Dropdown"}</FormText>
@@ -58,11 +67,9 @@ function InputValue(props) {
                     <Input type="text" name="title" id="inputTitle" value={formData.title} onChange={handleInputChange} placeholder="Enter Title" />
                 </Label>
                 <br />
-                <br />
                 <Label>
                     <Input type="textarea" name="body" id="textareaBody" value={formData.body} onChange={handleInputChange} placeholder="Enter Body" />
                 </Label>
-                <br />
                 <br />
                 <Label>
                     <Input type="select" name="dropdown" id="dropdownMonth" value={formData.dropdown} onChange={handleInputChange} style={props.fontStyles} >
@@ -73,14 +80,18 @@ function InputValue(props) {
                     </Input>
                 </Label>
                 <br />
-                <br />
                 <Label>
                     Happy: <Input type="checkbox" name="happyCheckbox" id="checkboxHappy" onChange={handleCheckboxChange} />
                 </Label>
                 <br />
-                <br />
                 <Button>Submit</Button>
             </Form>
+            {notes.map(note =>
+                <div className="inputValue-note">
+                    <h2>{note.title}</h2>
+                    <p>{note.body}</p>
+                </div>
+            )}
         </>
     )
 }

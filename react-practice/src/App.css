@@ -111,8 +111,15 @@ ul {
 
 .input-value-note {
   width: 90%;
-  background-color: green;
+  margin: 0 auto;
   padding: 0.7em;
+  background-color: red;
+}
+
+.inputValue-note {
+  width: 90%;
+  margin: 0 auto;
+  background-color: lime;
 }
 
 .user-lists {
