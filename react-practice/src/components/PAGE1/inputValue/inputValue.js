@@ -57,8 +57,8 @@ function InputValue(props) {
 
     const toggleComplete = title => {
         setNotes(notes.map(element => {
-            if(element.title === title){
-                return {...element, complete: !element.complete}
+            if (element.title === title) {
+                return { ...element, complete: !element.complete }
             } else {
                 return element
             }

@@ -50,6 +50,21 @@ function FriendsForm() {
         })
     }
 
+    const toggleComplete = name => {
+        setData(data.map(element => {
+            if(element.fname === name){
+                return {...element, complete: !element.complete}
+            } else {
+                return element
+            }
+        }))
+    }
+
+    const clearComplete = () => {
+        // setData(data.filter(element => element.complete === false))
+        setData([])
+    }
+
 
     return (
         <>
@@ -64,8 +79,9 @@ function FriendsForm() {
                     </label>
                     <input type="submit" />
                 </form>
+                <button onClick={clearComplete}>Clear</button>
                 {data.map(friend => (
-                    <div key={friend.id}>
+                    <div key={friend.id} className={`${friend.complete ? "complete" : ""}`} onClick={() => toggleComplete(friend.fname)}>
                         <h2>{friend.fname} {friend.lname}</h2>
                     </div>
                 ))}
