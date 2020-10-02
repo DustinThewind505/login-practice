@@ -14,6 +14,7 @@ import DogApi from './dogAPI/dogAPI';
 import RickAndMortyApi from './rickAndMorty/RickAndMorty';
 import NasaApi from './nasaApi/nasaApi';
 import FriendsForm from './friendsForm/friendsForm';
+import AdvancedForm from './advancedForm/advancedform';
 
 
 function PageOne() {
@@ -124,10 +125,17 @@ function PageOne() {
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>
                 </Col>
-                {/* ========Freinds Form ======== */}
+                {/* ======== Friends Form ======== */}
                 <Col sm="6" md="4" xl="6">
                     <Card style={bgStyles} className="friends-form">
                         <FriendsForm fontStyles={fontStyles} />
+                        <img src={logo} className="App-logo" alt="logo" />
+                    </Card>
+                </Col>
+                {/* ======== Advanced Form ======== */}
+                <Col sm="6" md="4" xl="6">
+                    <Card style={bgStyles} className="friends-form">
+                        <AdvancedForm fontStyles={fontStyles} />
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>
                 </Col>
