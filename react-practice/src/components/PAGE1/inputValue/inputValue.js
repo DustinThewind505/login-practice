@@ -42,18 +42,21 @@ function InputValue(props) {
     }
 
     const handleInputChange = event => {
+
+        let value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+
         setFormData({
             ...formData,
-            [event.target.name]: event.target.value
+            [event.target.name]: value
         })
     }
 
-    const handleCheckboxChange = event => {
-        setFormData({
-            ...formData,
-            [event.target.name]: event.target.checked
-        })
-    }
+    // const handleCheckboxChange = event => {
+    //     setFormData({
+    //         ...formData,
+    //         [event.target.name]: event.target.checked
+    //     })
+    // }
 
     const toggleComplete = title => {
         setNotes(notes.map(element => {
@@ -98,7 +101,7 @@ function InputValue(props) {
                 </Label>
                 <br />
                 <Label>
-                    Happy: <Input type="checkbox" name="happyCheckbox" id="checkboxHappy" onChange={handleCheckboxChange} />
+                    Happy: <Input type="checkbox" name="happyCheckbox" id="checkboxHappy" onChange={handleInputChange} />
                 </Label>
                 <br />
                 <Button>Submit</Button>
