@@ -8,13 +8,13 @@ const initialFriends = [
         id: uuid(),
         fname: 'John',
         lname: 'Smith',
-
+        complete: false,
     },
     {
         id: uuid(),
         fname: 'Jane',
         lname: 'Doe',
-
+        complete: false,
     }
 ]
 
@@ -47,6 +47,7 @@ function FriendsForm() {
         setFormValues({
             fname: '',
             lname: '',
+            complete: false,
         })
     }
 
@@ -61,8 +62,8 @@ function FriendsForm() {
     }
 
     const clearComplete = () => {
-        // setData(data.filter(element => element.complete === false))
-        setData([])
+        setData(data.filter(element => element.complete === false))
+        // setData([])
     }
 
 

@@ -101,7 +101,7 @@ function InputValue(props) {
                 </Label>
                 <br />
                 <Label>
-                    Happy: <Input type="checkbox" name="happyCheckbox" id="checkboxHappy" onChange={handleInputChange1} />
+                    Happy: <Input type="checkbox" name="happyCheckbox" id="checkboxHappy" onChange={handleInputChange} />
                 </Label>
                 <br />
                 <Button>Submit</Button>
