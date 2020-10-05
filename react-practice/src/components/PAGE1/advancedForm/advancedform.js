@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { CardHeader, CardBody, Button, Input, Form } from 'reactstrap';
 
 
 function AdvancedForm() {
@@ -16,6 +16,9 @@ function AdvancedForm() {
             "complete": false,
         }
         setNotes([...notes, newNote])
+        setFormData({
+            "name": ""
+        })
     }
 
     function handleInputChange(event) {
@@ -40,18 +43,28 @@ function AdvancedForm() {
 
 
     return (
-        <div>
-            <h2>Advanced Form</h2>
+        <>
+            <CardHeader>Advanced Form</CardHeader>
+            <CardBody>
             <h4>{formData.name}</h4>
-            <form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
+                <p>How old?</p>
                 <label>
-                    Name: <input type="text" id="name" name="name" onChange={handleInputChange} />
+                    13-18   <Input type="radio" />
+                    19-24   <Input type="radio" />
+                    25-39   <Input type="radio" />
+                    40+     <Input type="radio" />
                 </label>
-                <button>Submit</button>
-            </form>
+                <label>
+                    Name: <Input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} />
+                </label>
+                <br />
+                <Button>Submit</Button>
+            </Form>
             {notes.map(element => <h4 onClick={() => toggleComplete(element.name)} className={`${element.complete ? "complete" : ""}`}>{element.name}</h4>)}
-            <button onClick={clearAll}>Clear</button>
-        </div>
+            <Button onClick={clearAll}>Clear</Button>
+            </CardBody>
+        </>
     )
 }
 

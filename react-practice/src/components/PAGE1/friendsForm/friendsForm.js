@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
-import { CardHeader, CardBody } from 'reactstrap';
+import { CardHeader, CardBody, Button } from 'reactstrap';
 
 
 const initialFriends = [
@@ -78,9 +78,9 @@ function FriendsForm() {
                     <label>
                         Last Name: <input name="lname" onChange={handleInputChange} required />
                     </label>
-                    <input type="submit" />
+                    <Button>Submit</Button>
                 </form>
-                <button onClick={clearComplete}>Clear</button>
+                <Button onClick={clearComplete}>Clear</Button>
                 {data.map(friend => (
                     <div key={friend.id} className={`${friend.complete ? "complete" : ""}`} onClick={() => toggleComplete(friend.fname)}>
                         <h2>{friend.fname} {friend.lname}</h2>
