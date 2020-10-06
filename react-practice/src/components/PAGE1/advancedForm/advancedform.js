@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CardHeader, CardBody, Button, Input, Form } from 'reactstrap';
+import { CardHeader, CardBody, Button, Input, Form, Label } from 'reactstrap';
 
 
 function AdvancedForm() {
@@ -46,23 +46,32 @@ function AdvancedForm() {
         <>
             <CardHeader>Advanced Form</CardHeader>
             <CardBody>
-            <h4>{formData.name}</h4>
             <Form onSubmit={handleSubmit}>
                 <p>How old?</p>
-                <label>
+                <Label>
                     13-18   <Input type="radio" />
                     19-24   <Input type="radio" />
                     25-39   <Input type="radio" />
                     40+     <Input type="radio" />
-                </label>
-                <label>
+                </Label>
+                <Label>
+                    <Input type="checkbox"  />
+                </Label>
+                <Label>
                     Name: <Input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} />
-                </label>
+                </Label>
+                <Input type="select">
+                    <option />
+                    <option value="New Mexico" >New Mexico</option>
+                    <option value="New Mexico" >OOOHHH</option>
+                    <option value="New Mexico" >AAAHHHH</option>
+                </Input>
                 <br />
+                <h4>{formData.name}</h4>
                 <Button>Submit</Button>
             </Form>
-            {notes.map(element => <h4 onClick={() => toggleComplete(element.name)} className={`${element.complete ? "complete" : ""}`}>{element.name}</h4>)}
             <Button onClick={clearAll}>Clear</Button>
+            {notes.map(element => <h4 onClick={() => toggleComplete(element.name)} className={`${element.complete ? "complete" : ""}`}>{element.name}</h4>)}
             </CardBody>
         </>
     )
