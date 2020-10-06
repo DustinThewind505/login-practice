@@ -173,6 +173,13 @@ a:hover {
   text-decoration: none;
 }
 
+.advanced-form-body {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
