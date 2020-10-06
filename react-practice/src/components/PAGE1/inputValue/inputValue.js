@@ -21,7 +21,7 @@ function InputValue(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         // axios.get(`?title=${title}&body=${body}`)
-        alert(`FORM:\n${formData.title}\n${formData.body}\n${formData.dropdown}\n${formData.title ? "I'm happy" : "I'm NOT happy"}`);
+        alert(`FORM:\n${formData.title}\n${formData.body}\n${formData.dropdown}\n${formData.happyCheckbox ? "I'm happy" : "I'm NOT happy"}`);
 
         const newNote = {
             "title": formData.title,
@@ -43,12 +43,14 @@ function InputValue(props) {
 
     const handleInputChange = event => {
 
-        let value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
-
-        setFormData({
+        const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+        
+        const newFormState = {
             ...formData,
             [event.target.name]: value
-        })
+        }
+
+        setFormData(newFormState)
     }
 
     // const handleCheckboxChange = event => {
@@ -101,7 +103,7 @@ function InputValue(props) {
                 </Label>
                 <br />
                 <Label>
-                    Happy: <Input type="checkbox" name="happyCheckbox" id="checkboxHappy" onChange={handleInputChange} />
+                    Happy: <Input type="checkbox" name="happyCheckbox" id="checkboxHappy" checked={formData.happyCheckbox} onChange={handleInputChange} />
                 </Label>
                 <br />
                 <Button>Submit</Button>

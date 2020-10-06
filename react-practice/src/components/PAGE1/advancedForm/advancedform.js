@@ -12,13 +12,15 @@ const schema = Yup.object().shape({
 })
 
 function AdvancedForm() {
+    const [buttonDisabled, setButtonDisabled] = useState(true);
+
     const [notes, setNotes] = useState([]);
 
     const [formData, setFormData] = useState({
         "name": "",
         "email": "",
         "state": "",
-        "happy": ""
+        "happy": false
     })
 
     function handleSubmit(event) {
@@ -35,15 +37,18 @@ function AdvancedForm() {
             "name": "",
             "email": "",
             "state": "",
-            "happy": ""
+            "happy": false
         })
     }
 
     function handleInputChange(event) {
-        setFormData({
+
+        const newFormState = {
             ...formData,
-            [event.target.name]: event.target.value
-        })
+            [event.target.name]: event.target.type === "checkbox" ? event.target.checked : event.target.value
+        }
+
+        setFormData(newFormState)
     }
 
     function toggleComplete(str) {
@@ -70,30 +75,34 @@ function AdvancedForm() {
                         Name: <Input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} />
                     </Label>
                     <Label>
-                        Email: <Input type="email" id="email" name="email" />
+                        Email: <Input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} />
                     </Label>
                     <p>How old?</p>
                     <Label>
-                    13-18   <Input type="radio" />
+                        13-18   <Input type="radio" />
                     19-24   <Input type="radio" />
                     25-39   <Input type="radio" />
                     40+     <Input type="radio" />
                     </Label>
                     <Label>
-                        <Input type="checkbox" name="happy" />
+                        <Input type="checkbox" name="happy" checked={formData.happy} onChange={handleInputChange} />
                     </Label>
-                    <Input type="select" name="state">
+                    <Input type="select" name="state" value={formData.state} onChange={handleInputChange}>
                         <option />
                         <option value="New Mexico" >New Mexico</option>
-                        <option value="New Mexico" >OOOHHH</option>
-                        <option value="New Mexico" >AAAHHHH</option>
+                        <option value="OOOHHH" >OOOHHH</option>
+                        <option value="AAAHHHH" >AAAHHHH</option>
                     </Input>
                     <br />
                     <h4>{formData.name}</h4>
-                    <Button>Submit</Button>
+                    <Button type="submit" >Submit</Button>
                 </Form>
                 <Button onClick={clearAll}>Clear</Button>
-                {notes.map(element => <h4 onClick={() => toggleComplete(element.name)} className={`${element.complete ? "complete" : ""}`}>{element.name}</h4>)}
+                {notes.map(element => 
+                    <div onClick={() => toggleComplete(element.name)} className={`${element.complete ? "complete" : ""}`}>
+                        <h4>{element.name} {element.happy ? "is happy!" : "is sad."}</h4>
+                    </div>
+                )}
             </CardBody>
         </>
     )

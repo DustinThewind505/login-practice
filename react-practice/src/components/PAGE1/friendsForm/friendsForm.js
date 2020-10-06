@@ -8,12 +8,14 @@ const initialFriends = [
         id: uuid(),
         fname: 'John',
         lname: 'Smith',
+        happy: true,
         complete: false,
     },
     {
         id: uuid(),
         fname: 'Jane',
         lname: 'Doe',
+        happy: true,
         complete: false,
     }
 ]
@@ -29,17 +31,11 @@ function FriendsForm() {
     })
 
     const handleInputChange = event => {
-        setFormValues({
+        const newFormState = {
             ...formValues,
-            [event.target.name]: event.target.value
-        })
-    }
-
-    const handleCheckboxChange = event => {
-        setFormValues({
-            ...formValues,
-            happy: !formValues.happy
-        })
+            [event.target.name]: event.target.type === "checkbox" ? event.target.checked : event.target.value
+        }
+        setFormValues(newFormState)
     }
 
     const handleSubmit = event => {
@@ -56,6 +52,7 @@ function FriendsForm() {
         setFormValues({
             fname: '',
             lname: '',
+            happy: false,
             complete: false,
         })
     }
@@ -72,7 +69,6 @@ function FriendsForm() {
 
     const clearComplete = () => {
         setData(data.filter(element => element.complete === false))
-        // setData([])
     }
 
 
@@ -82,13 +78,13 @@ function FriendsForm() {
             <CardBody>
                 <form onSubmit={handleSubmit}>
                     <label>
-                        First Name: <input name="fname" value={formValues.fname} onChange={handleInputChange} />
+                        First Name: <input type="text" name="fname" value={formValues.fname} onChange={handleInputChange} />
                     </label>
                     <label>
-                        Last Name: <input name="lname" value={formValues.lname} onChange={handleInputChange} required />
+                        Last Name: <input type="text" name="lname" value={formValues.lname} onChange={handleInputChange} required />
                     </label>
                     <label>
-                        Happy? <input type="checkbox" value={formValues.happy} name="happy" onChange={handleCheckboxChange} />
+                        Happy? <input type="checkbox" checked={formValues.happy} name="happy" onChange={handleInputChange} />
                     </label>
                     <br />
                     <Button>Submit</Button>
