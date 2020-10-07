@@ -1,15 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CardHeader, CardBody, Button, Input, Form, Label } from 'reactstrap';
 import * as Yup from 'yup';
 
-
-const schema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
-    email: Yup.string().email("Must be a valid email"),
-    state: Yup.string().required("Must select New Mexico"),
-    happy: Yup.boolean().oneOf([true], "Please me happy")
-
-})
 
 function AdvancedForm() {
     const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -17,29 +9,31 @@ function AdvancedForm() {
     const [notes, setNotes] = useState([]);
 
     const [formData, setFormData] = useState({
-        "name": "",
-        "email": "",
-        "state": "",
-        "happy": false
+        name: "",
+        email: "",
+        state: "",
+        happy: false
     })
+
 
     function handleSubmit(event) {
         event.preventDefault();
         const newNote = {
-            "name": formData.name,
-            "email": formData.email,
-            "state": formData.state,
-            "happy": formData.happy,
+            name: formData.name,
+            email: formData.email,
+            state: formData.state,
+            happy: formData.happy,
             "complete": false,
         }
         setNotes([...notes, newNote])
         setFormData({
-            "name": "",
-            "email": "",
-            "state": "",
-            "happy": false
+            name: "",
+            email: "",
+            state: "",
+            happy: false
         })
     }
+
 
     function handleInputChange(event) {
 
@@ -51,6 +45,7 @@ function AdvancedForm() {
         setFormData(newFormState)
     }
 
+
     function toggleComplete(str) {
         setNotes(notes.map(element => {
             if (str === element.name) {
@@ -61,10 +56,28 @@ function AdvancedForm() {
         }))
     }
 
+
     function clearAll() {
         setNotes(notes.filter(element => element.complete === false))
     }
 
+    const formSchema = Yup.object().shape({
+        name: Yup.string().required("Name is required"),
+        email: Yup.string().email("Must be a valid email"),
+        state: Yup.string().oneOf(["New Mexico", "Alabama", "Hawaii"], "Choose New Mexico"),
+        happy: Yup.boolean().oneOf([true], "Please me happy")
+
+    })
+
+
+    useEffect(() => {
+        formSchema.isValid(formData).then((valid) => {
+            console.log("is my form valid?", valid);
+            setButtonDisabled(!valid)
+        })
+    }, [formData])
+
+    console.log("formdata", formData)
 
     return (
         <>
@@ -88,19 +101,19 @@ function AdvancedForm() {
                         <Input type="checkbox" name="happy" checked={formData.happy} onChange={handleInputChange} />
                     </Label>
                     <Input type="select" name="state" value={formData.state} onChange={handleInputChange}>
-                        <option />
+                        <option value="">--Choose One--</option>
                         <option value="New Mexico" >New Mexico</option>
-                        <option value="OOOHHH" >OOOHHH</option>
-                        <option value="AAAHHHH" >AAAHHHH</option>
+                        <option value="Alabama" >Alabama</option>
+                        <option value="Hawaii" >Hawaii</option>
                     </Input>
                     <br />
                     <h4>{formData.name}</h4>
-                    <Button type="submit" >Submit</Button>
+                    <Button type="submit" disabled={buttonDisabled}>Submit</Button>
                 </Form>
                 <Button onClick={clearAll}>Clear</Button>
-                {notes.map(element => 
+                {notes.map(element =>
                     <div onClick={() => toggleComplete(element.name)} className={`${element.complete ? "complete" : ""}`}>
-                        <h4>{element.name} {element.happy ? "is happy!" : "is sad."}</h4>
+                        <h4 key={element.name}>{element.name} {element.happy ? "is happy!" : "is sad."}</h4>
                     </div>
                 )}
             </CardBody>

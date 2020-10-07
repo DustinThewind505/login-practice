@@ -44,7 +44,7 @@ function InputValue(props) {
     const handleInputChange = event => {
 
         const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
-        
+
         const newFormState = {
             ...formData,
             [event.target.name]: value
@@ -109,7 +109,7 @@ function InputValue(props) {
                 <Button>Submit</Button>
             </Form>
             {notes.map(note =>
-                <div className={`inputValue-note ${note.complete ? "complete" : ""}`} onClick={() => toggleComplete(note.title)}>
+                <div className={`inputValue-note ${note.complete ? "complete" : ""}`} onClick={() => toggleComplete(note.title)} key={note.title}>
                     <h2>{note.title}</h2>
                     <p>{note.body}</p>
                     <p>{note.dropdown}</p>
