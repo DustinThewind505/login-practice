@@ -35,6 +35,16 @@ function AdvancedForm() {
     }
 
 
+    const validateChange = e => {
+        Yup.reach(formSchema, e.target.name).validate(e.target.type === "checkbox" ? e.target.checked : e.target.value)
+        .then(valid => {
+            setErrors({...errors, [e.target.name]: ""})
+        })
+        .catch(err => {
+            setErrors({...errors, [e.target.name]: err.errors[0]})
+        })
+    }
+
     function handleInputChange(event) {
 
         const newFormState = {
