@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CardHeader, CardBody, Button, Input, Form, Label } from 'reactstrap';
+import axios from 'axios';
 import * as Yup from 'yup';
 
 
@@ -8,7 +9,16 @@ function AdvancedForm() {
 
     const [notes, setNotes] = useState([]);
 
+    const [post, setPost] = useState([])
+
     const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        state: "",
+        happy: false
+    })
+
+    const [errors, setErrors] = useState({
         name: "",
         email: "",
         state: "",
@@ -18,6 +28,7 @@ function AdvancedForm() {
 
     function handleSubmit(event) {
         event.preventDefault();
+
         const newNote = {
             name: formData.name,
             email: formData.email,
@@ -26,35 +37,48 @@ function AdvancedForm() {
             "complete": false,
         }
         setNotes([...notes, newNote])
-        setFormData({
-            name: "",
-            email: "",
-            state: "",
-            happy: false
+
+        axios.post("https://reqres.in/api/users", formData)
+        .then((resp) => {
+            console.log(resp);
+
+            setPost(resp.data);
+
+            setFormData({
+                name: "",
+                email: "",
+                state: "",
+                happy: false
+            })
         })
+        
     }
 
 
     const validateChange = e => {
+        
         Yup.reach(formSchema, e.target.name).validate(e.target.type === "checkbox" ? e.target.checked : e.target.value)
         .then(valid => {
             setErrors({...errors, [e.target.name]: ""})
         })
         .catch(err => {
+            console.log("err", err)
             setErrors({...errors, [e.target.name]: err.errors[0]})
         })
     }
 
     function handleInputChange(event) {
-
+        event.persist()
         const newFormState = {
             ...formData,
             [event.target.name]: event.target.type === "checkbox" ? event.target.checked : event.target.value
         }
 
+        validateChange(event)
         setFormData(newFormState)
     }
 
+    
 
     function toggleComplete(str) {
         setNotes(notes.map(element => {
@@ -75,7 +99,7 @@ function AdvancedForm() {
         name: Yup.string().required("Name is required"),
         email: Yup.string().email("Must be a valid email"),
         state: Yup.string().oneOf(["New Mexico", "Alabama", "Hawaii"], "Choose New Mexico"),
-        happy: Yup.boolean().oneOf([true], "Please me happy")
+        happy: Yup.boolean().oneOf([true], "Please be happy")
 
     })
 
@@ -96,10 +120,12 @@ function AdvancedForm() {
                 <Form onSubmit={handleSubmit}>
                     <Label>
                         Name: <Input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} />
+                        {/* {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null} */}
                     </Label>
                     <Label>
                         Email: <Input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} />
                     </Label>
+                    {/* {errors.email.length > 0 ? <p className="error">{errors.name}</p> : null} */}
                     <p>How old?</p>
                     <Label>
                         13-18   <Input type="radio" />
@@ -109,6 +135,7 @@ function AdvancedForm() {
                     </Label>
                     <Label>
                         <Input type="checkbox" name="happy" checked={formData.happy} onChange={handleInputChange} />
+                        {/* {errors.happy.length > 0 ? <p className="error">{errors.name}</p> : null} */}
                     </Label>
                     <Input type="select" name="state" value={formData.state} onChange={handleInputChange}>
                         <option value="">--Choose One--</option>
@@ -126,6 +153,7 @@ function AdvancedForm() {
                         <h4 key={element.name}>{element.name} {element.happy ? "is happy!" : "is sad."}</h4>
                     </div>
                 )}
+                <pre>{JSON.stringify(post, null, 2)}</pre>
             </CardBody>
         </>
     )

@@ -180,6 +180,11 @@ a:hover {
   flex-direction: column;
 }
 
+.error {
+  font-size: 1.2rem;
+  color: red;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
