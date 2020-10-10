@@ -5,9 +5,10 @@ import * as Yup from 'yup';
 
 
 function AdvancedForm() {
+    // ========== STATE ==========
     const [buttonDisabled, setButtonDisabled] = useState(true);
 
-    // const [notes, setNotes] = useState([]);
+    const [notes, setNotes] = useState([]);
 
     const [post, setPost] = useState([])
 
@@ -26,17 +27,18 @@ function AdvancedForm() {
     })
 
 
+    // ========== FUNCTIONS ==========
     function handleSubmit(event) {
         event.preventDefault();
 
-        // const newNote = {
-        //     name: formData.name,
-        //     email: formData.email,
-        //     state: formData.state,
-        //     happy: formData.happy,
-        //     "complete": false,
-        // }
-        // setNotes([...notes, newNote])
+        const newNote = {
+            name: formData.name,
+            email: formData.email,
+            state: formData.state,
+            happy: formData.happy,
+            "complete": false,
+        }
+        setNotes([...notes, newNote])
 
         axios.post("https://reqres.in/api/users", formData)
         .then((resp) => {
@@ -80,20 +82,20 @@ function AdvancedForm() {
 
     
 
-    // function toggleComplete(str) {
-    //     setNotes(notes.map(element => {
-    //         if (str === element.name) {
-    //             return { ...element, complete: !element.complete }
-    //         } else {
-    //             return element
-    //         }
-    //     }))
-    // }
+    function toggleComplete(str) {
+        setNotes(notes.map(element => {
+            if (str === element.name) {
+                return { ...element, complete: !element.complete }
+            } else {
+                return element
+            }
+        }))
+    }
 
 
-    // function clearAll() {
-    //     setNotes(notes.filter(element => element.complete === false))
-    // }
+    function clearAll() {
+        setNotes(notes.filter(element => element.complete === false))
+    }
 
     const formSchema = Yup.object().shape({
         name: Yup.string().required("Name is required"),
@@ -113,6 +115,8 @@ function AdvancedForm() {
 
     console.log("formdata", formData)
 
+
+    // ========== COMPONENT ==========
     return (
         <>
             <CardHeader>Advanced Form</CardHeader>
@@ -120,22 +124,22 @@ function AdvancedForm() {
                 <Form onSubmit={handleSubmit}>
                     <Label>
                         Name: <Input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} />
-                        {/* {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null} */}
+                        {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}
                     </Label>
                     <Label>
                         Email: <Input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} />
                     </Label>
-                    {/* {errors.email.length > 0 ? <p className="error">{errors.name}</p> : null} */}
+                    {errors.email.length > 0 ? <p className="error">{errors.email}</p> : null}
                     <p>How old?</p>
-                    {/* <Label>
+                    <Label>
                         13-18   <Input type="radio" />
                     19-24   <Input type="radio" />
                     25-39   <Input type="radio" />
                     40+     <Input type="radio" />
-                    </Label> */}
+                    </Label>
                     <Label>
                         <Input type="checkbox" name="happy" checked={formData.happy} onChange={handleInputChange} />
-                        {/* {errors.happy.length > 0 ? <p className="error">{errors.name}</p> : null} */}
+                        {errors.happy.length > 0 ? <p className="error">{errors.name}</p> : null}
                     </Label>
                     <br/>
                     <br />
@@ -149,12 +153,12 @@ function AdvancedForm() {
                     <h4>{formData.name}</h4>
                     <Button type="submit" disabled={buttonDisabled}>Submit</Button>
                 </Form>
-                {/* <Button onClick={clearAll}>Clear</Button> */}
-                {/* {notes.map(element =>
+                <Button onClick={clearAll}>Clear</Button>
+                {notes.map(element =>
                     <div onClick={() => toggleComplete(element.name)} className={`${element.complete ? "complete" : ""}`}>
                         <h4 key={element.name}>{element.name} {element.happy ? "is happy!" : "is sad."}</h4>
                     </div>
-                )} */}
+                )}
                 <pre>{JSON.stringify(post, null, 2)}</pre>
             </CardBody>
         </>

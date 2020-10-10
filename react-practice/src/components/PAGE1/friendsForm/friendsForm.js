@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
+import * as Yup from 'yup';
 import { CardHeader, CardBody, Button } from 'reactstrap';
 
-
+// ========== DUMMY DATA ==========
 const initialFriends = [
     {
         id: uuid(),
@@ -21,8 +22,10 @@ const initialFriends = [
 ]
 
 function FriendsForm() {
+    // ========== STATE ==========
     const [data, setData] = useState(initialFriends);
 
+    const [buttonDisabled, setButtonDisabled] = useState(true)
 
     const [formValues, setFormValues] = useState({
         fname: '',
@@ -30,6 +33,22 @@ function FriendsForm() {
         happy: false
     })
 
+
+    const formSchema = Yup.object().shape({
+        fname: Yup.string().required("Name is required"),
+        lname: Yup.string().required("Must be a valid email"),
+        happy: Yup.boolean().oneOf([true], "Please be happy")
+
+    })
+
+    useEffect(() => {
+        formSchema.isValid(formValues).then((valid) => {
+            console.log("is my form valid?", valid);
+            setButtonDisabled(!valid)
+        })
+    }, [formValues])
+
+    // ========== FUNCTIONS ==========
     const handleInputChange = event => {
         const newFormState = {
             ...formValues,
@@ -72,6 +91,8 @@ function FriendsForm() {
     }
 
 
+
+    // ========== COMPONENT ==========
     return (
         <>
             <CardHeader>Friends Form</CardHeader>
@@ -87,7 +108,7 @@ function FriendsForm() {
                         Happy? <input type="checkbox" checked={formValues.happy} name="happy" onChange={handleInputChange} />
                     </label>
                     <br />
-                    <Button>Submit</Button>
+                    <Button type="submit" disabled={buttonDisabled}>Submit</Button>
                 </form>
                 <Button onClick={clearComplete}>Clear</Button>
                 {data.map(friend => (
