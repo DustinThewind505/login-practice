@@ -9,7 +9,7 @@ function FormTwo(props) {
 
     return (
         <form className='form' onSubmit={e => e.preventDefault()}>
-            <h3>Form #1</h3>
+            <h3>Form #2</h3>
             <section className='form-body'>
                 <label>
                     <input type="text" name="username" />

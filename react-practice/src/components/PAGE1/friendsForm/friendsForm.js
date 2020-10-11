@@ -36,9 +36,8 @@ function FriendsForm() {
 
     const formSchema = Yup.object().shape({
         fname: Yup.string().required("Name is required"),
-        lname: Yup.string().required("Must be a valid email"),
+        lname: Yup.string().required("Name is required"),
         happy: Yup.boolean().oneOf([true], "Please be happy")
-
     })
 
     useEffect(() => {
