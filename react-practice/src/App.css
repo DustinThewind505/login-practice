@@ -7,20 +7,6 @@
   transition: all 0.2s ease-in;
 }
 
-/* h2 {
-  margin-bottom: 0.5em;
-} */
-
-/* p {
-  margin-bottom: 0.5em;
-} */
-
-/* input {
-  width: 50%;
-  height: 3vh;
-  margin: 1em 0;
-} */
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -185,13 +171,19 @@ a:hover {
   color: red;
 }
 
+.forms-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .forms-page-container {
   width: 90%;
   margin: 5% auto;
   padding: 1.5% 1%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color: rgb(214, 211, 211);
 }
 
@@ -199,6 +191,38 @@ a:hover {
   width: 33%;
   padding: 1%;
   background-color: brown;
+  border: 2px solid brown;
+}
+
+form {
+  height: 60vh;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: gold;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container:hover {
+  border: 2px solid black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.display-form {
+  background: url("https://pluspng.com/img-png/burnt-paper-png-burnt-paper-327.png");
+  height: 40vh;
+  margin: 0 auto;
+  /* background-color: chartreuse; */
+}
+
+.display-form:hover {
+  border: 2px solid white;
 }
 
 @keyframes App-logo-spin {
