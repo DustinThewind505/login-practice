@@ -45,10 +45,10 @@ function Form1(props) {
             <form onSubmit={handleSubmit}>
             <h3>Form #1</h3>
             <section className='form-body'>
-                <label>
+                <label>username
                     <input type='text' name='username'  onChange={handleChange}  />
                 </label>
-                <label>
+                <label>email
                     <input type='text' name='email'  onChange={handleEmail} />
                 </label>
             </section>

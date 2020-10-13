@@ -63,6 +63,13 @@
   display: flex;
 } */
 
+label {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 ul {
   display: flex;
   justify-content: space-evenly;
@@ -191,7 +198,7 @@ a:hover {
   width: 33%;
   padding: 1%;
   background-color: brown;
-  border: 2px solid brown;
+  border: 3px solid brown;
 }
 
 form {
@@ -209,7 +216,7 @@ form {
 }
 
 .form-container:hover {
-  border: 2px solid black;
+  border: 3px solid black;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-1px);
 }

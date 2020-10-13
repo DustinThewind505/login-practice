@@ -7,7 +7,7 @@ function Form2(props) {
     const [formData, setFormData] = useState({
         username: "",
         email: "",
-        agree: false
+        agree: true
     })
 
 
@@ -23,6 +23,11 @@ function Form2(props) {
     const handleSubmit = e => {
         e.preventDefault();
         props.setDisplayForm(formData)
+        setFormData({
+            username: "",
+            email: "",
+            agree: false
+        })
     }
 
 
@@ -33,7 +38,7 @@ function Form2(props) {
             <p>Username: {formData.username}</p>
             <p>Email: {formData.email}</p>
             <p>Terms: {formData.agree ? "agreed✔" : "please agree"}</p>
-            <FormTwo formData={formData} setFormData={setFormData} handleSubmit={handleSubmit} handleChange={handleChange}/>
+            <FormTwo formData={formData} setFormData={setFormData} handleSubmit={handleSubmit} handleChange={handleChange} />
         </div>
     )
 }
