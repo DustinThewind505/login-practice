@@ -39,7 +39,6 @@ function Form1(props) {
     console.log(formData)
     return (
         <div className='form-container'>
-             {/* onClick={() => props.setDisplayForm(formData)} */}
             <h3>Form #1</h3>
             <p>Username: {formData.username}</p>
             <p>Email: {formData.email}</p>

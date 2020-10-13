@@ -20,6 +20,11 @@ function Form2(props) {
         setFormData(newForm)
     }
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        props.setDisplayForm(formData)
+    }
+
 
 
     return (
@@ -28,7 +33,7 @@ function Form2(props) {
             <p>Username: {formData.username}</p>
             <p>Email: {formData.email}</p>
             <p>Terms: {formData.agree ? "agreed✔" : "please agree"}</p>
-            <FormTwo formData={formData} setFormData={setFormData} setDisplayForm={props.setDisplayForm} handleChange={handleChange}/>
+            <FormTwo formData={formData} setFormData={setFormData} handleSubmit={handleSubmit} handleChange={handleChange}/>
         </div>
     )
 }
