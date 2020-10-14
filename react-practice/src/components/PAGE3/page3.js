@@ -14,7 +14,7 @@ function Page3() {
         <>
             <section className="forms-app">
                 <h1>The Forms</h1>
-                <form onSubmit={e => e.preventDefault()}>
+                <form onSubmit={e => e.preventDefault()} className="display-form">
                     {Object.values(displayForm).map((element, index) => <p key={index}>{typeof element === "boolean" ? "Checked✔✔✔" : element}</p>)}
                 </form>
                    

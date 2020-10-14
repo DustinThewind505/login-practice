@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
-
 import FormTwo from './form2A';
 
 import * as yup from 'yup';
+// ========== Form validation with yup dependency ==========
+const formSchema = yup.object().shape({
+    username: yup.string().required("Must enter a username"),
+    email: yup.string().email("Must use a valid email").required("Must enter an email"),
+    agree: yup.boolean().oneOf([true], "You must agree with us")
+})
+
 
 
 
 function Form2(props) {
     // ========== STATE ==========
-const [disableButton, setDiableButton] = useState(true)
+    const [disableButton, setDiableButton] = useState(true)
 
     const [formData, setFormData] = useState({
         username: "",
@@ -37,17 +43,11 @@ const [disableButton, setDiableButton] = useState(true)
         })
     }
 
-    const formSchema = yup.object().shape({
-        username: yup.string().required("Must enter a username"),
-        email: yup.string().email("Must use a valid email").required("Must enter an email"),
-        agree: yup.boolean().oneOf([true], "You must agree with us")
-    })
-
     useEffect(() => {
         formSchema.isValid(formData)
-        .then(response => {
-            setDiableButton(!response)
-        })
+            .then(response => {
+                setDiableButton(!response)
+            })
     }, [formData])
 
 

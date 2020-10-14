@@ -202,7 +202,7 @@ a:hover {
 }
 
 form {
-  height: 800px;
+  height: 500px;
   padding: 1%;
   display: flex;
   flex-direction: column;
@@ -222,10 +222,11 @@ form {
 }
 
 .display-form {
-  background: url("https://pluspng.com/img-png/burnt-paper-png-burnt-paper-327.png");
-  height: 40vh;
+  padding: 5% 15%;
   margin: 0 auto;
-  /* background-color: chartreuse; */
+  background: url("https://pluspng.com/img-png/burnt-paper-png-burnt-paper-327.png");
+  background-size: cover;
+  color: black;
 }
 
 .display-form:hover {
