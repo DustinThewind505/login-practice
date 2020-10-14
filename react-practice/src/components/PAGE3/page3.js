@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { boolean } from 'yup';
 
 import Form1 from './forms/form1';
 import Form2 from './forms/form2';
@@ -14,7 +15,7 @@ function Page3() {
             <section className="forms-app">
                 <h1>The Forms</h1>
                 <form onSubmit={e => e.preventDefault()}>
-                    {Object.values(displayForm).map((element, index) => <p key={index}>{element}</p>)}
+                    {Object.values(displayForm).map((element, index) => <p key={index}>{typeof element === "boolean" ? "Checked✔✔✔" : element}</p>)}
                 </form>
                    
 

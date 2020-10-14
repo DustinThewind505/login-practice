@@ -18,7 +18,7 @@ function FormTwo(props) {
                     <input type="email" name='email' onChange={props.handleChange}/>
                 </label>
                 <label>checkbox
-                    <input type="checkbox" name='checkbox'  onChange={props.handleChange}/>
+                    <input type="checkbox" name='agree'  onChange={props.handleChange}/>
                 </label>
             </section>
             <footer>
