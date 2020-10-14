@@ -18,11 +18,11 @@ function FormTwo(props) {
                     <input type="email" name='email' onChange={props.handleChange}/>
                 </label>
                 <label>checkbox
-                    <input type="checkbox" name='checkbox' checked={props.formData.agree} onChange={props.handleChange}/>
+                    <input type="checkbox" name='checkbox'  onChange={props.handleChange}/>
                 </label>
             </section>
             <footer>
-                <button type='submit'>Submit</button>
+                <button type='submit' disabled={props.disableButton}>Submit</button>
             </footer>
         </form>
     )
