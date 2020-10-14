@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import * as yup from 'yup';
 // import FormOne from './form1A';
 
 
 
 function Form1(props) {
+    // ========== STATE ==========
+    const [disableButton, setDisableButton] = useState(true)
     const [formData, setFormData] = useState({
         username: "",
         email: ""
     })
 
+
+    // ========== FUNCTIONS ==========
     const handleChange = e => {
         const newFormState = {
             ...formData,
@@ -35,8 +40,18 @@ function Form1(props) {
         props.setDisplayForm(newForm)
     }
 
+    const formSchema = yup.object().shape({
+        username: yup.string().required("Must enter a username"),
+        email: yup.string().email("Must provide a valid email").required("Must enter an email")
+    })
 
-    console.log(formData)
+    useEffect(() => {
+        formSchema.isValid(formData)
+        .then(response => setDisableButton(!response))
+    }, [formData])
+
+
+    // ========== COMPONENT ==========
     return (
         <div className='form-container'>
             <h3>Form #1</h3>
@@ -53,7 +68,7 @@ function Form1(props) {
                 </label>
             </section>
             <footer>
-                <button type='submit'>Submit</button>
+                <button type='submit' disabled={disableButton}>Submit</button>
             </footer>
         </form>
         </div>

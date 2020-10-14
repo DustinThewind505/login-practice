@@ -14,7 +14,7 @@ function Page3() {
             <section className="forms-app">
                 <h1>The Forms</h1>
                 <form onSubmit={e => e.preventDefault()}>
-                    {Object.values(displayForm).map(element => <p>{element}</p>)}
+                    {Object.values(displayForm).map((element, index) => <p key={index}>{element}</p>)}
                 </form>
                    
 
