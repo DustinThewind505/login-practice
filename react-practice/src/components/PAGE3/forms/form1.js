@@ -57,6 +57,11 @@ function Form1(props) {
         }
 
         props.setDisplayForm(newForm)
+
+        setFormData({
+            username: "",
+            email: ""
+        })
     }
 
     useEffect(() => {
@@ -76,11 +81,11 @@ function Form1(props) {
                 <section className='form-body'>
                     <label>username
                     <input type='text' name='username' onChange={handleChange} />
-                    {errors.username.length > 0 ? <p className="error">{errors.username}</p> : null}
+                        {errors.username.length > 0 ? <p className="error">{errors.username}</p> : null}
                     </label>
                     <label>email
                     <input type='text' name='email' onChange={handleChange} />
-                    {errors.email.length > 0 ? <p className="error">{errors.email}</p> : null}
+                        {errors.email.length > 0 ? <p className="error">{errors.email}</p> : null}
                     </label>
                 </section>
                 <footer>

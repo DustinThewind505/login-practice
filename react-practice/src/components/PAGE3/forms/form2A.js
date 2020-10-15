@@ -4,9 +4,13 @@ import React from 'react';
 
 
 function FormTwo(props) {
+    // ========== STATE ==========
 
 
+    // ========== FUNCTIONS ==========
 
+
+    // ========== COMPONENT ==========
     return (
         <form className='form' onSubmit={props.handleSubmit}>
             <h3>Form #2</h3>
@@ -20,7 +24,7 @@ function FormTwo(props) {
                     {props.errors.email.length > 0 ? <p className="error">{props.errors.email}</p> : null}
                 </label>
                 <label>checkbox
-                    <input type='checkbox' name='agree' checked={props.formData.agree}  onChange={props.handleChange}/>
+                    <input type='checkbox' name='agree' value={props.formData.agree} checked={props.formData.agree}  onChange={props.handleChange}/>
                     {props.errors.agree.length > 0 ? <p className="error">{props.errors.agree}</p> : null}
                 </label>
             </section>

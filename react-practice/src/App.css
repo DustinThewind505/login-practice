@@ -201,6 +201,12 @@ a:hover {
   border: 3px solid brown;
 }
 
+.form-container:hover {
+  border: 3px solid black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
 form {
   height: 500px;
   padding: 1%;
@@ -215,12 +221,6 @@ form {
   flex-direction: column;
 }
 
-.form-container:hover {
-  border: 3px solid black;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  transform: translateY(-1px);
-}
-
 .display-form {
   padding: 5% 15%;
   margin: 0 auto;
@@ -230,7 +230,7 @@ form {
 }
 
 .display-form:hover {
-  border: 2px solid white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes App-logo-spin {

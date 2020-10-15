@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-// import { boolean } from 'yup';
 
 import Form1 from './forms/form1';
 import Form2 from './forms/form2';
 
+
+
 function Page3() {
+    // ========== STATE ==========
     const [displayForm, setDisplayForm] = useState({
         name: "ello poppet"
     });
 
 
+    // ========== FUNCTIONS ==========
+
+
+
+    // ========== COMPONENT ==========
     return (
         <>
             <section className="forms-app">
