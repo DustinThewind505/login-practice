@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Form1 from './forms/form1';
 import Form2 from './forms/form2';
+import Form3 from './forms/form3';
 
 
 
@@ -29,7 +30,7 @@ function Page3() {
                 <div className='forms-page-container'>
                     <Form1 setDisplayForm={setDisplayForm}/>
                     <Form2 setDisplayForm={setDisplayForm}/>
-
+                    <Form3 setDisplayForm={setDisplayForm}/>
                 </div>
             </section>
         </>

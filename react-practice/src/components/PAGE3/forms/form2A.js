@@ -12,7 +12,7 @@ function FormTwo(props) {
 
     // ========== COMPONENT ==========
     return (
-        <form className='form' onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit}>
             <h3>Form #2</h3>
             <section className='form-body'>
                 <label>username
