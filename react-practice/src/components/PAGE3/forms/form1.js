@@ -65,8 +65,8 @@ function Form1(props) {
     }
 
     useEffect(() => {
-        formSchema.isValid(formData)
-            .then(response => setDisableButton(!response))
+        formSchema.isValid(formData).then(res => setDisableButton(!res))
+
     }, [formData])
 
 

@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
-
+// ========== Form validation with yup ==========
+const formSchema = yup.object().shape({
+    food: yup.string().required("Everyone hass a favorite food")
+})
 
 function Form3(props) {
     // ========== STATE ==========
+    const [disableButton, setDisableButton] = useState(true)
+
     const [formData, setFormData] = useState({
         food: ""
     })
@@ -30,6 +35,11 @@ function Form3(props) {
         })
     }
 
+    useEffect(() => {
+        formSchema.isValid(formData).then(res => setDisableButton(!res))
+
+    }, [formData])
+
 
     // ========== COMPONENT ==========
     return (
@@ -49,7 +59,7 @@ function Form3(props) {
                     </label>
                 </section>
                 <footer>
-                    <button type='submit'>Submit</button>
+                    <button type='submit' disabled={disableButton}>Submit</button>
                 </footer>
             </form>
         </div>
