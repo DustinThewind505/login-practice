@@ -22,14 +22,28 @@ function Form2(props) {
         agree: false
     })
 
+    const [errors, setErrors] = useState({
+        username: "",
+        email: "",
+        agree: false
+    })
+
 
     // ========== FUNCTIONS ==========
+    const validateChange = e => {
+        yup.reach(formSchema, e.target.name).validate(e.target.value)
+        .then(response => setErrors({...errors, [e.target.name]: ""}))
+        .catch(err => setErrors({...errors, [e.target.name]: err.errors[0]}))
+    }
+
     const handleChange = e => {
+        e.persist()
         const newForm = {
             ...formData,
             [e.target.name]: e.target.type === "checkbox" ? e.target.checked : e.target.value
         }
 
+        validateChange(e)
         setFormData(newForm)
     }
 
@@ -59,7 +73,7 @@ function Form2(props) {
             <p>Username: {formData.username}</p>
             <p>Email: {formData.email}</p>
             <p>Terms: {formData.agree ? "agreed✔" : "please agree"}</p>
-            <FormTwo formData={formData} disableButton={disableButton} handleSubmit={handleSubmit} handleChange={handleChange} />
+            <FormTwo formData={formData} errors={errors} disableButton={disableButton} handleSubmit={handleSubmit} handleChange={handleChange} />
         </div>
     )
 }
