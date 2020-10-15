@@ -6,7 +6,7 @@ import * as yup from 'yup';
 const formSchema = yup.object().shape({
     username: yup.string().required("Must enter a username"),
     email: yup.string().email("Must use a valid email").required("Must enter an email"),
-    agree: yup.boolean().oneOf([true], "You must agree with us")
+    agree: yup.boolean().oneOf([true])
 })
 
 

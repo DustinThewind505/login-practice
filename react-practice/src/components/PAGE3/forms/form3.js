@@ -13,14 +13,27 @@ function Form3(props) {
         food: ""
     })
 
+    const [errors, setErrors] = useState({
+        food: ""
+    })
+
 
     // ========== FUNCTIONS ==========
+    const validateLine = e => {
+        yup.reach(formSchema, e.target.name).validate(e.target.value)
+        .then(res => setErrors({
+            food: ""
+        }))
+        .catch(err => setErrors({food: err.errors[0]}))
+    }
+
     const handleChange = e => {
+        e.persist()
         const newForm = {
-            ...formData,
-            food: e.target.value
+            [e.target.name]: e.target.value
         }
 
+        validateLine(e)
         setFormData(newForm)
     }
 
@@ -50,12 +63,13 @@ function Form3(props) {
                 <h3>Form #3</h3>
                 <section className="form-body">
                     <label>Food
-                        <select value={formData.food} onChange={handleChange}>
+                        <select name="food" value={formData.food} onChange={handleChange}>
                             <option value="">===Choose One===</option>
                             <option value="apples">Apples</option>
                             <option value="bacon">Bacon</option>
                             <option value="chimichangas">Chimichangas</option>
                         </select>
+                        {errors.food.length > 0 ? <p className="error">{errors.food}</p> : null}
                     </label>
                 </section>
                 <footer>
