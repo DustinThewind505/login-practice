@@ -8,20 +8,22 @@ function FormOne(props) {
 
 
     return (
-        <form onSubmit={e => e.preventDefault()}>
-            <h3>Form #1</h3>
-            <section className='form-body'>
-                <label>
-                    <input type='text' name='username'  onChange={props.handleChange}  />
-                </label>
-                <label>
-                    <input type='text' name='email'  onChange={props.handleEmail} />
-                </label>
-            </section>
-            <footer>
-                <button type='submit'>Submit</button>
-            </footer>
-        </form>
+        <form onSubmit={props.handleSubmit}>
+                <h3>Form #1</h3>
+                <section className='form-body'>
+                    <label>username
+                    <input type='text' name='username' onChange={props.handleChange} />
+                        {props.errors.username.length > 0 ? <p className="error">{props.errors.username}</p> : null}
+                    </label>
+                    <label>email
+                    <input type='text' name='email' onChange={props.handleChange} />
+                        {props.errors.email.length > 0 ? <p className="error">{props.errors.email}</p> : null}
+                    </label>
+                </section>
+                <footer>
+                    <button type='submit' disabled={props.disableButton}>Submit</button>
+                </footer>
+            </form>
     )
 }
 

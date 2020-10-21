@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import FormOne from './form1A';
+import FormOne from './form1A';
 
 import * as yup from 'yup';
 // ========== Form validation with yup dependency ==========
@@ -76,22 +76,7 @@ function Form1(props) {
             <h3>Form #1</h3>
             <p>Username: {formData.username}</p>
             <p>Email: {formData.email}</p>
-            <form onSubmit={handleSubmit}>
-                <h3>Form #1</h3>
-                <section className='form-body'>
-                    <label>username
-                    <input type='text' name='username' onChange={handleChange} />
-                        {errors.username.length > 0 ? <p className="error">{errors.username}</p> : null}
-                    </label>
-                    <label>email
-                    <input type='text' name='email' onChange={handleChange} />
-                        {errors.email.length > 0 ? <p className="error">{errors.email}</p> : null}
-                    </label>
-                </section>
-                <footer>
-                    <button type='submit' disabled={disableButton}>Submit</button>
-                </footer>
-            </form>
+            <FormOne handleSubmit={handleSubmit} handleChange={handleChange} errors={errors} disableButton={disableButton} />
         </div>
     )
 }
