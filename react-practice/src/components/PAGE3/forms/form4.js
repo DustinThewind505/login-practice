@@ -64,7 +64,7 @@ function Form4(props) {
                 <h3>Form #4</h3>
                 <section className='form-body'>
                     <label>Username
-                        <input type="text" onChange={handleChange} value={formData.username} />
+                        <input type="text" name="username" onChange={handleChange} value={formData.username} />
                         {errors.username.length > 0 ? <p className="error">{errors.username}</p> : null}
                     </label>
                 </section>
