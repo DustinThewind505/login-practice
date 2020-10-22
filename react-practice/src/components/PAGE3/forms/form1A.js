@@ -15,10 +15,10 @@ function FormOne(props) {
                     <input type='text' name='username' onChange={props.handleChange} />
                         {props.errors.username.length > 0 ? <p className="error">{props.errors.username}</p> : null}
                     </label>
-                    <label>email
+                    {/* <label>email
                     <input type='text' name='email' onChange={props.handleChange} />
                         {props.errors.email.length > 0 ? <p className="error">{props.errors.email}</p> : null}
-                    </label>
+                    </label> */}
                 </section>
                 <footer>
                     <button type='submit' disabled={props.disableButton}>Submit</button>

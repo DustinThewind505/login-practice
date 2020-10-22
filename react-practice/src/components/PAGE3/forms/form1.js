@@ -4,8 +4,8 @@ import FormOne from './form1A';
 import * as yup from 'yup';
 // ========== Form validation with yup dependency ==========
 const formSchema = yup.object().shape({
-    username: yup.string().required("Must enter a username"),
-    email: yup.string().email("Must provide a valid email").required("Must enter an email")
+    username: yup.string().required("Must enter a username").min(2, "Needs to be longer"),
+    // email: yup.string().email("Must provide a valid email").required("Must enter an email")
 })
 
 
@@ -17,12 +17,12 @@ function Form1(props) {
 
     const [formData, setFormData] = useState({
         username: "",
-        email: ""
+        // email: ""
     })
 
     const [errors, setErrors] = useState({
         username: "",
-        email: ""
+        // email: ""
     });
 
 
@@ -60,7 +60,7 @@ function Form1(props) {
 
         setFormData({
             username: "",
-            email: ""
+            // email: ""
         })
     }
 
@@ -75,7 +75,7 @@ function Form1(props) {
         <div className='form-container'>
             <h3>Form #1</h3>
             <p>Username: {formData.username}</p>
-            <p>Email: {formData.email}</p>
+            {/* <p>Email: {formData.email}</p> */}
             <FormOne handleSubmit={handleSubmit} handleChange={handleChange} errors={errors} disableButton={disableButton} />
         </div>
     )
