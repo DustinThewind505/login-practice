@@ -13,7 +13,7 @@ function FormTwo(props) {
     // ========== COMPONENT ==========
     return (
         <form onSubmit={props.handleSubmit}>
-            <h3>Form #2</h3>
+            <h3>Form #2 - input/email</h3>
             <section className='form-body'>
                 <label>email
                     <input type='email' name='email' value={props.formData.email} onChange={props.handleChange}/>

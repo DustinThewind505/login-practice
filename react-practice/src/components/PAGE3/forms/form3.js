@@ -60,9 +60,9 @@ function Form3(props) {
             <h3>Form #3</h3>
             <p>Food: {formData.food}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #3</h3>
+                <h3>Form #3 - select</h3>
                 <section className="form-body">
-                    <label>Food
+                    <label>food
                         <select name="food" value={formData.food} onChange={handleChange}>
                             <option value="">=== Choose One ===</option>
                             <option value="apples">Apples</option>

@@ -197,6 +197,7 @@ a:hover {
 .form-container {
   width: 33%;
   padding: 1%;
+  margin: 0.1% 0;
   background-color: brown;
   border: 3px solid brown;
 }
