@@ -4,9 +4,9 @@ import FormTwo from './form2A';
 import * as yup from 'yup';
 // ========== Form validation with yup dependency ==========
 const formSchema = yup.object().shape({
-    username: yup.string().required("Must enter a username"),
+    // username: yup.string().required("Must enter a username"),
     email: yup.string().email("Must use a valid email").required("Must enter an email"),
-    agree: yup.boolean().oneOf([true])
+    // agree: yup.boolean().oneOf([true])
 })
 
 
@@ -17,15 +17,15 @@ function Form2(props) {
     const [disableButton, setDiableButton] = useState(true)
 
     const [formData, setFormData] = useState({
-        username: "",
+        // username: "",
         email: "",
-        agree: false
+        // agree: false
     })
 
     const [errors, setErrors] = useState({
-        username: "",
+        // username: "",
         email: "",
-        agree: false
+        // agree: false
     })
 
 
@@ -51,9 +51,9 @@ function Form2(props) {
         e.preventDefault();
         props.setDisplayForm(formData)
         setFormData({
-            username: "",
+            // username: "",
             email: "",
-            agree: false
+            // agree: false
         })
     }
 
@@ -70,9 +70,9 @@ function Form2(props) {
     return (
         <div className='form-container'>
             <h3>Form #2</h3>
-            <p>Username: {formData.username}</p>
+            {/* <p>Username: {formData.username}</p> */}
             <p>Email: {formData.email}</p>
-            <p>Terms: {formData.agree ? "agreed✔" : "please agree"}</p>
+            {/* <p>Terms: {formData.agree ? "agreed✔" : "please agree"}</p> */}
             <FormTwo formData={formData} errors={errors} disableButton={disableButton} handleSubmit={handleSubmit} handleChange={handleChange} />
         </div>
     )

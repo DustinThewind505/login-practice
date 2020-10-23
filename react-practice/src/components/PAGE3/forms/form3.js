@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 // ========== Form validation with yup ==========
 const formSchema = yup.object().shape({
-    food: yup.string().required("Everyone hass a favorite food")
+    food: yup.string().required("Must choose a favorite food")
 })
 
 function Form3(props) {
@@ -13,24 +13,24 @@ function Form3(props) {
         food: ""
     })
 
-    const [errors, setErrors] = useState({
+    const [errorsState, setErrorsState] = useState({
         food: ""
     })
 
 
     // ========== FUNCTIONS ==========
     const validateLine = e => {
-        yup.reach(formSchema, e.target.name).validate(e.target.value)
-        .then(res => setErrors({
+        yup.reach(formSchema, "food").validate(e.target.value)
+        .then(res => setErrorsState({
             food: ""
         }))
-        .catch(err => setErrors({food: err.errors[0]}))
+        .catch(err => setErrorsState({food: err.errors[0]}))
     }
 
     const handleChange = e => {
         e.persist()
         const newForm = {
-            [e.target.name]: e.target.value
+            food: e.target.value
         }
 
         validateLine(e)
@@ -64,12 +64,12 @@ function Form3(props) {
                 <section className="form-body">
                     <label>Food
                         <select name="food" value={formData.food} onChange={handleChange}>
-                            <option value="">===Choose One===</option>
+                            <option value="">=== Choose One ===</option>
                             <option value="apples">Apples</option>
                             <option value="bacon">Bacon</option>
                             <option value="chimichangas">Chimichangas</option>
                         </select>
-                        {errors.food.length > 0 ? <p className="error">{errors.food}</p> : null}
+                        {errorsState.food.length > 0 ? <p className="error">{errorsState.food}</p> : null}
                     </label>
                 </section>
                 <footer>

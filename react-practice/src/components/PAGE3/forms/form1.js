@@ -4,8 +4,7 @@ import FormOne from './form1A';
 import * as yup from 'yup';
 // ========== Form validation with yup dependency ==========
 const formSchema = yup.object().shape({
-    username: yup.string().required("Must enter a username").min(2, "Needs to be longer"),
-    // email: yup.string().email("Must provide a valid email").required("Must enter an email")
+    username: yup.string().required("Must enter a username").min(2, "Needs to be longer")
 })
 
 
@@ -16,34 +15,26 @@ function Form1(props) {
     const [disableButton, setDisableButton] = useState(true)
 
     const [formData, setFormData] = useState({
-        username: "",
-        // email: ""
+        username: ""
     })
 
-    const [errors, setErrors] = useState({
-        username: "",
-        // email: ""
+    const [errorsState, setErrorsState] = useState({
+        username: ""
     });
 
 
     // ========== FUNCTIONS ==========
     const validateChange = e => {
         yup.reach(formSchema, e.target.name).validate(e.target.value)
-            .then(response => setErrors({
-                ...errors,
-                [e.target.name]: ""
-            }))
-            .catch(err => setErrors({
-                ...errors,
-                [e.target.name]: err.errors[0]
-            }))
+            .then(response => setErrorsState({username: ""}))
+            .catch(err => setErrorsState({username: err.errors[0]}))
     }
 
     const handleChange = e => {
         e.persist();
         const newFormState = {
             ...formData,
-            [e.target.name]: e.target.value,
+            username: e.target.value,
         }
 
         validateChange(e)
@@ -59,8 +50,7 @@ function Form1(props) {
         props.setDisplayForm(newForm)
 
         setFormData({
-            username: "",
-            // email: ""
+            username: ""
         })
     }
 
@@ -75,8 +65,7 @@ function Form1(props) {
         <div className='form-container'>
             <h3>Form #1</h3>
             <p>Username: {formData.username}</p>
-            {/* <p>Email: {formData.email}</p> */}
-            <FormOne handleSubmit={handleSubmit} handleChange={handleChange} errors={errors} disableButton={disableButton} />
+            <FormOne formData={formData} handleSubmit={handleSubmit} handleChange={handleChange} errorsState={errorsState} disableButton={disableButton} />
         </div>
     )
 }
