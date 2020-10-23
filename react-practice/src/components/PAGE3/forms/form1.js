@@ -25,7 +25,7 @@ function Form1(props) {
 
     // ========== FUNCTIONS ==========
     const validateChange = e => {
-        yup.reach(formSchema, e.target.name).validate(e.target.value)
+        yup.reach(formSchema, 'username').validate(e.target.value)
             .then(response => setErrorsState({username: ""}))
             .catch(err => setErrorsState({username: err.errors[0]}))
     }
@@ -33,7 +33,6 @@ function Form1(props) {
     const handleChange = e => {
         e.persist();
         const newFormState = {
-            ...formData,
             username: e.target.value,
         }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 // ========== Form validation with yup ==========
 const formSchema = yup.object().shape({
-    username: yup.string().required('Must enter a username'),
+    agree: yup.boolean().oneOf([true], 'Must agree'),
 })
 
 
@@ -11,27 +11,27 @@ function Form4(props) {
     const [disableButton, setDiableButton] = useState(true);
 
     const [formData, setFormData] = useState({
-        username: "",
+        agree: false
     })
 
     const [errors, setErrors] = useState({
-        username: "",
+        agree: "",
     })
 
 
 
     // ========== FUNCTIONS ==========
     const validateInput = (e) => {
-        yup.reach(formSchema, e.target.name).validate(e.target.value)
-        .then(res => setErrors({...errors, username: ""}))
-        .catch(err => setErrors({...errors, username: err.errors[0]}))
+        yup.reach(formSchema, e.target.name).validate(e.target.checked)
+        .then(res => setErrors({agree: ""}))
+        .catch(err => setErrors({agree: err.errors[0]}))
     }
 
     const handleChange = e => {
         e.persist();
 
         const newFormData = {
-            username: e.target.value
+            agree: e.target.checked
         }
 
         validateInput(e)
@@ -45,7 +45,7 @@ function Form4(props) {
         props.setDisplayForm(formData)
 
         setFormData({
-            username: ""
+            agree: false
         })
     }
 
@@ -58,14 +58,14 @@ function Form4(props) {
     return (
         <div className="form-container">
             <h3>Form #4</h3>
-            <p>Username: {formData.username}</p>
+            <p>Agree: {formData.agree ? "Agreed✔✔✔" : ""}</p>
 
             <form onSubmit={handleSubmit}>
                 <h3>Form #4</h3>
                 <section className='form-body'>
-                    <label>Username
-                        <input type="text" name="username" onChange={handleChange} value={formData.username} />
-                        {errors.username.length > 0 ? <p className="error">{errors.username}</p> : null}
+                    <label>Terms and Conditions
+                        <input type="checkbox" name="agree" onChange={handleChange} checked={formData.agree} />
+                        {errors.agree.length > 0 ? <p className="error">{errors.agree}</p> : null}
                     </label>
                 </section>
                 <footer>
