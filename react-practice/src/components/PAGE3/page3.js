@@ -5,6 +5,7 @@ import Form2 from './forms/form2';
 import Form3 from './forms/form3';
 import Form4 from './forms/form4';
 import Form5 from './forms/form5';
+import Form6 from './forms/form6';
 
 
 
@@ -36,6 +37,7 @@ function Page3() {
                     <Form3 setDisplayForm={setDisplayForm}/>
                     <Form4 setDisplayForm={setDisplayForm}/>
                     <Form5 setDisplayForm={setDisplayForm}/>
+                    <Form6 setDisplayForm={setDisplayForm}/>
                 </div>
             </section>
         </>
