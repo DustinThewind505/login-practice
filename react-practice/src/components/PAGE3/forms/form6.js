@@ -75,8 +75,7 @@ function Form6(props) {
                         <input type='radio' name='soda' value='cream soda🍺' onChange={handleChange} />
                         </label>
                         <label>Pepsi
-                        <input type='radio' name='soda' value='pepsi' onChange={handleChange} />
-                            
+                        <input type='radio' name='soda' value='pepsi' onChange={handleChange} />     
                         </label>
                     </div>
                     {errorsState.soda.length > 0 ? <p className='error'>{errorsState.soda}</p> : null}
