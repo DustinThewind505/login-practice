@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
+import { Route, NavLink } from 'react-router-dom';
 
-import Form1 from './forms/form1';
-import Form2 from './forms/form2';
-import Form3 from './forms/form3';
-import Form4 from './forms/form4';
-import Form5 from './forms/form5';
-import Form6 from './forms/form6';
+import YupFormContainer from './yup/yupContainer';
+import DefaultForms from './default/defaultContainer';
 
 
 
@@ -29,16 +26,16 @@ function Page3() {
                     <h2>Display Form</h2>
                     {Object.values(displayForm).map((element, index) => <p key={index}>{typeof element === "boolean" ? "Checked✔✔✔" : element}</p>)}
                 </form>
-                   
-
-                <div className='forms-page-container'>
-                    <Form1 setDisplayForm={setDisplayForm}/>
-                    <Form2 setDisplayForm={setDisplayForm}/>
-                    <Form3 setDisplayForm={setDisplayForm}/>
-                    <Form4 setDisplayForm={setDisplayForm}/>
-                    <Form5 setDisplayForm={setDisplayForm}/>
-                    <Form6 setDisplayForm={setDisplayForm}/>
-                </div>
+                <ul>
+                    <li><NavLink to='/page3'>Yup</NavLink></li>
+                    <li><NavLink to='/page3/default'>Default</NavLink></li>
+                </ul>
+                <Route exact path='/page3'>
+                    <YupFormContainer setDisplayForm={setDisplayForm} />
+                </Route>
+                <Route path='/page3/default'>
+                    <DefaultForms setDisplayForm={setDisplayForm} />
+                </Route>
             </section>
         </>
     )
