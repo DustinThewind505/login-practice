@@ -49,11 +49,12 @@ function DefaultFormBehavior(props) {
                 <h3>Username: {formData.username}</h3>
                 <section className='form-body'>
                     <label>username
-                        <input name='username' value={formData.username} onChange={handleChange}/>
+                        <input name='username' value={formData.username} onChange={handleChange} required/>
                     </label>
                 </section>
                 <footer>
-                    <button type='submit' disabled={disableButton}>Submit</button>
+                    <button type='submit'>Submit</button>
+                    {/* disabled={disableButton} */}
                 </footer>
             </form>
         </div>

@@ -26,8 +26,8 @@ function Page3() {
                     <h2>Display Form</h2>
                     {Object.values(displayForm).map((element, index) => <p key={index}>{typeof element === "boolean" ? "Checked✔✔✔" : element}</p>)}
                 </form>
-                <ul>
-                    <li><NavLink to='/page3'>Yup</NavLink></li>
+                <ul className='forms-nav'>
+                    <li><NavLink exact to='/page3'>Yup</NavLink></li>
                     <li><NavLink to='/page3/default'>Default</NavLink></li>
                 </ul>
                 <Route exact path='/page3'>
