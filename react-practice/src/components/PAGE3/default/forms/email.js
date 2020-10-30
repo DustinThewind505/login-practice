@@ -11,7 +11,7 @@ function EmailInputForm(props) {
 
 
     // ========== FUNCTIONS ==========
-    const handleChange = e=> {
+    const handleChange = e => {
         const newFormState = {
             email: e.target.value
         }
@@ -34,18 +34,20 @@ function EmailInputForm(props) {
 
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h3>Email: {formData.email}</h3>
-            <section className='form-body'>
-                <label>email
+        <div className='form-container'>
+            <form onSubmit={handleSubmit}>
+                <h3>Email: {formData.email}</h3>
+                <section className='form-body'>
+                    <label>email
                         <input type='email' name='email' value={formData.email} onChange={handleChange} required />
-                </label>
-            </section>
-            <footer>
-                <button type='submit'>Submit</button>
-                {/* disabled={disableButton} */}
-            </footer>
-        </form>
+                    </label>
+                </section>
+                <footer>
+                    <button type='submit'>Submit</button>
+                    {/* disabled={disableButton} */}
+                </footer>
+            </form>
+        </div>
     )
 }
 

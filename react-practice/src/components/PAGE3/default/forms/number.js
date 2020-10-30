@@ -2,19 +2,18 @@ import React, { useState, useEffect } from 'react';
 
 
 
-function TextInputForm(props) {
+function NumberInputForm(props) {
     // ========== STATE ==========
-    const [disableButton, setDisableButton] = useState(true)
-
     const [formData, setFormData] = useState({
-        username: ""
+        number: 0
     })
+
 
 
     // ========== FUNCTIONS ==========
     const handleChange = e => {
         const newFormState = {
-            username: e.target.value
+            number: e.target.value
         }
 
         setFormData(newFormState)
@@ -26,17 +25,9 @@ function TextInputForm(props) {
         props.setDisplayForm(formData)
 
         setFormData({
-            username: ""
+            number: 0
         })
     }
-
-    useEffect(() => {
-        if (formData.username === "") {
-            setDisableButton(true)
-        } else {
-            setDisableButton(false)
-        }
-    }, [formData])
 
 
 
@@ -45,10 +36,10 @@ function TextInputForm(props) {
     return (
         <div className='form-container'>
             <form onSubmit={handleSubmit}>
-                <h3>Username: {formData.username}</h3>
+                <h3>Number: {formData.number}</h3>
                 <section className='form-body'>
-                    <label>username
-                        <input name='username' value={formData.username} onChange={handleChange} required />
+                    <label>number
+                        <input type='number' name='number' value={formData.number} onChange={handleChange} required />
                     </label>
                 </section>
                 <footer>
@@ -60,4 +51,4 @@ function TextInputForm(props) {
     )
 }
 
-export default TextInputForm;
+export default NumberInputForm;

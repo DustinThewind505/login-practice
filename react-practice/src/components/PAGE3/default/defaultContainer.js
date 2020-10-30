@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import Form1 from './forms/username';
 import Form2 from './forms/email';
+import Form3 from './forms/number';
+import Form4 from './forms/radio';
 
 
 
@@ -22,6 +24,8 @@ function DefaultFormContainer(props) {
         <div className='forms-page-container'>
             <Form1 setDisplayForm={props.setDisplayForm}/>
             <Form2 setDisplayForm={props.setDisplayForm}/>
+            <Form3 setDisplayForm={props.setDisplayForm}/>
+            <Form4 setDisplayForm={props.setDisplayForm}/>
         </div>
         </>
     )
