@@ -59,7 +59,6 @@ function Form4(props) {
         <div className="form-container">
             <h3>Form #4</h3>
             <p>Terms & Cons: {formData.agree ? "Agreed✔✔✔" : ""}</p>
-
             <form onSubmit={handleSubmit}>
                 <h3>Form #4 - checkbox</h3>
                 <section className='form-body'>

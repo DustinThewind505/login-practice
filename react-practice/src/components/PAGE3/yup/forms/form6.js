@@ -59,7 +59,7 @@ function Form6(props) {
     // ========== COMPONENT ==========
     return (
         <div className='form-container'>
-            <h3>Form #6</h3>
+            <h3>Form #6 - input/checkbox</h3>
             <p>Soda: {formData.soda}</p>
             <form onSubmit={handleSubmit}>
                 <h3>Form #6</h3>

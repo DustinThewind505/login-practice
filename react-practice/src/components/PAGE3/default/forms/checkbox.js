@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 function NumberInputForm(props) {
     // ========== STATE ==========
     const [formData, setFormData] = useState({
-        radio: ""
+        checkbox: false
     })
 
 
@@ -13,7 +13,7 @@ function NumberInputForm(props) {
     // ========== FUNCTIONS ==========
     const handleChange = e => {
         const newFormState = {
-            radio: e.target.value
+            checkbox: e.target.checked
         }
 
         setFormData(newFormState)
@@ -25,7 +25,7 @@ function NumberInputForm(props) {
         props.setDisplayForm(formData)
 
         setFormData({
-            radio: ""
+            checkbox: false
         })
     }
 
@@ -35,25 +35,23 @@ function NumberInputForm(props) {
 
     return (
         <div className='form-container'>
-            <h3>Form #4 - input/radio</h3>
-            <p>Radio: {formData.radio}</p>
+            <h3>Form #6 - input/checkbox</h3>
+            <p>Checkbox: {formData.checkbox ? 'Checked✔✔✔🎉🎉' : ''}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Radio: {formData.radio}</h3>
+                <h3>Checkbox: {formData.checkbox}</h3>
                 <section className='form-body'>
-                    <div className='radio-container'>
-                        <label>Lawful Good
-                        <input type='radio' name='radio' value='Lawful Good' onChange={handleChange} required />
-                        </label>
-                        <label>Chaotic Good
-                        <input type='radio' name='radio' value='Chaotic Good' onChange={handleChange} required />
+                    <label>checkbox
+                        <input type='checkbox' name='checkbox' checked={formData.checkbox} onChange={handleChange} required />
+                    </label>
+                    {/* <label>Chaotic Good
+                        <input type='checkbox' name='checkbox' value='Chaotic Good' onChange={handleChange} required />
                         </label>
                         <label>Lawful Evil
-                        <input type='radio' name='radio' value='Lawful Evil' onChange={handleChange} required />
+                        <input type='checkbox' name='checkbox' value='Lawful Evil' onChange={handleChange} required />
                         </label>
                         <label>Chaotic Evil
-                        <input type='radio' name='radio' value='Chaotic Evil' onChange={handleChange} required />
-                        </label>
-                    </div>
+                        <input type='checkbox' name='checkbox' value='Chaotic Evil' onChange={handleChange} required />
+                        </label> */}
                 </section>
                 <footer>
                     <button type='submit'>Submit</button>

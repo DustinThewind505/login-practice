@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 
 
-function NumberInputForm(props) {
+function SelectInputForm(props) {
     // ========== STATE ==========
     const [formData, setFormData] = useState({
-        number: ""
+        select: ""
     })
 
 
@@ -13,7 +13,7 @@ function NumberInputForm(props) {
     // ========== FUNCTIONS ==========
     const handleChange = e => {
         const newFormState = {
-            number: e.target.value
+            select: e.target.value
         }
 
         setFormData(newFormState)
@@ -25,7 +25,7 @@ function NumberInputForm(props) {
         props.setDisplayForm(formData)
 
         setFormData({
-            number: ""
+            select: ""
         })
     }
 
@@ -35,13 +35,18 @@ function NumberInputForm(props) {
 
     return (
         <div className='form-container'>
-            <h3>Form #3 - input/number</h3>
-            <p>Number: {formData.number}</p>
+            <h3>Form #5 - select</h3>
+            <p>Select: {formData.select}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Number: {formData.number}</h3>
+                <h3>Select: {formData.select}</h3>
                 <section className='form-body'>
-                    <label>number
-                        <input type='number' name='number' value={formData.number} onChange={handleChange} required />
+                    <label>select
+                        <select name='select' value={formData.select} onChange={handleChange}>
+                            <option value=''>== Choose One ==</option>
+                            <option value='bike'>bike</option>
+                            <option value='drive'>drive</option>
+                            <option value='plane'>plane</option>
+                        </select>
                     </label>
                 </section>
                 <footer>
@@ -53,4 +58,4 @@ function NumberInputForm(props) {
     )
 }
 
-export default NumberInputForm;
+export default SelectInputForm;

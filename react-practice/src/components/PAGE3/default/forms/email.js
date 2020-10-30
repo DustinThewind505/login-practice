@@ -35,6 +35,8 @@ function EmailInputForm(props) {
 
     return (
         <div className='form-container'>
+            <h3>Form #2 - input/email</h3>
+            <p>Email: {formData.email}</p>
             <form onSubmit={handleSubmit}>
                 <h3>Email: {formData.email}</h3>
                 <section className='form-body'>

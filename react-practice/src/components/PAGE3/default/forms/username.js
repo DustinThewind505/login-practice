@@ -44,6 +44,8 @@ function TextInputForm(props) {
 
     return (
         <div className='form-container'>
+            <h3>Form #1 - input/text</h3>
+            <p>Username: {formData.username}</p>
             <form onSubmit={handleSubmit}>
                 <h3>Username: {formData.username}</h3>
                 <section className='form-body'>
