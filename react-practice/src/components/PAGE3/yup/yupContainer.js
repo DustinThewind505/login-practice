@@ -16,14 +16,17 @@ function YupFormContainer(props) {
 
 
     return (
-        <div className='forms-page-container'>
-                    <Form1 setDisplayForm={props.setDisplayForm}/>
-                    <Form2 setDisplayForm={props.setDisplayForm}/>
-                    <Form3 setDisplayForm={props.setDisplayForm}/>
-                    <Form4 setDisplayForm={props.setDisplayForm}/>
-                    <Form5 setDisplayForm={props.setDisplayForm}/>
-                    <Form6 setDisplayForm={props.setDisplayForm}/>
-                </div>
+        <>
+            <img src='https://miro.medium.com/max/1000/1*4Apu-JRlee0VEJbQDplgPg.png' alt='yup logo' />
+            <div className='forms-page-container'>
+                <Form1 setDisplayForm={props.setDisplayForm} />
+                <Form2 setDisplayForm={props.setDisplayForm} />
+                <Form3 setDisplayForm={props.setDisplayForm} />
+                <Form4 setDisplayForm={props.setDisplayForm} />
+                <Form5 setDisplayForm={props.setDisplayForm} />
+                <Form6 setDisplayForm={props.setDisplayForm} />
+            </div>
+        </>
     )
 }
 
