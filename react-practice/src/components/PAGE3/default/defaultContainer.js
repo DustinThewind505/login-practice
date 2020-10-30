@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
 import Form1 from './forms/username';
+import Form2 from './forms/email';
 
 
 
@@ -16,9 +18,10 @@ function DefaultFormContainer(props) {
     // ========== COMPONENTS ==========
     return (
         <>
-        <img src='https://miro.medium.com/max/1000/1*4Apu-JRlee0VEJbQDplgPg.png' alt='yup logo' />
+        <img src='https://i.pinimg.com/originals/40/18/19/4018196360d9fd3324ceffbcc182bcc8.png' alt='yup logo' />
         <div className='forms-page-container'>
             <Form1 setDisplayForm={props.setDisplayForm}/>
+            <Form2 setDisplayForm={props.setDisplayForm}/>
         </div>
         </>
     )
