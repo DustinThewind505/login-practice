@@ -1,193 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  text-align: center;
-  transition: all 0.2s ease-in;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} 
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 1% 0 10%;
-}
-
-/* .App-header section {
-  width: 40%;
-  height: 80vh;
-  margin-top: 1em;
-  padding: 1em 0;
-  border: 1px solid black;
-  background-color: cadetblue;
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-/* button {
-  width: 80px;
-  height: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.2rem;
-  padding: 5px;
-  font-family: fantasy;
-  border: 2px solid #be9c38;
-  border-radius: 2px;
-} */
-
-/* button:hover {
-  background: #be9c38;
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-} */
-
-/* .counter-buttons, .color-picker-buttons, .rick-and-morty-buttons, .dog-api-buttons {
-  display: flex;
-} */
-
-label {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-button {
-  padding: 0% 4%;
-  border-radius: 10%;
-  border: 1px solid orange;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-ul {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.blue-button:hover {
-  background: blue;
-  color: lightskyblue;
-}
-
-.red-button:hover {
-  background: red;
-  color: lightsalmon;
-}
-
-.green-button:hover {
-  background: green;
-  color: lightgreen;
-}
-
-.random-button:hover {
-  background: black;
-  color: lawngreen;
-}
-
-
-.patrick-star {
-  width: 25%;
-  margin: 2em 0;
-  animation: rotate 10s linear forwards infinite;
-}
-
-.input-value-note {
-  width: 90%;
-  margin: 0 auto;
-  padding: 0.7em;
-  background-color: red;
-}
-
-.inputValue-note {
-  width: 90%;
-  margin: 2% auto;
-  background-color: lime;
-}
-
-.complete {
-  background-color: black;
-  columns: white;
-  text-decoration: line-through;
-}
-
-.user-lists {
-  width: 90%;
-  display: flex;
-  justify-content: space-between; 
-  background: green;
-}
-
-.user-lists ul {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 3em;
-}
-
-.ghibli-api div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.dog-api img {
-  width: 100%;
-  height: 50vh;
-}
-
-.nasa-api p {
-  font-size: 0.5em;
-  margin: 1em;
-}
-
-.card {
-  height: 1100px;
-}
-
-a:hover {
-  color: white;
-}
-
-.active {
-  background-color: #4285f4;
-  color: white;
-  text-decoration: none;
-}
-
-.advanced-form-body {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.error {
-  font-size: 1.2rem;
-  color: red;
-}
-
 .forms-app {
   display: flex;
   flex-direction: column;
@@ -201,21 +11,34 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: rgb(214, 211, 211);
+  background-color:yellow;
 }
 
 .form-container {
   width: 33%;
   padding: 1%;
   margin: 0.1% 0;
-  background-color: brown;
-  border: 3px solid brown;
+  background-color: goldenrod;
+  border: 3px solid gold;
 }
 
 .form-container:hover {
   border: 3px solid black;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-1px);
+}
+
+.default {
+  background-color: rgb(30, 30, 30);
+}
+
+.default .form-container {
+  background-color: black;
+  border: 3px solid brown;
+}
+
+.default form {
+  background-color: darkred;
 }
 
 form {
@@ -268,19 +91,4 @@ form {
   border-radius: 30%;
   padding: 1% 14%;
   text-decoration: none;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg)
-  }
 }

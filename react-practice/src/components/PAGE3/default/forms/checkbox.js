@@ -35,10 +35,10 @@ function NumberInputForm(props) {
 
     return (
         <div className='form-container'>
-            <h3>Form #6 - input/checkbox</h3>
+            <h3>Form #6</h3>
             <p>Checkbox: {formData.checkbox ? 'Checked✔✔✔🎉🎉' : ''}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Checkbox: {formData.checkbox}</h3>
+                <h3>Form #6 - input/checkbox</h3>
                 <section className='form-body'>
                     <label>checkbox
                         <input type='checkbox' name='checkbox' checked={formData.checkbox} onChange={handleChange} required />

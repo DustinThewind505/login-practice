@@ -35,10 +35,10 @@ function NumberInputForm(props) {
 
     return (
         <div className='form-container'>
-            <h3>Form #3 - input/number</h3>
+            <h3>Form #3</h3>
             <p>Number: {formData.number}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Number: {formData.number}</h3>
+                <h3>NForm #3 - input/number</h3>
                 <section className='form-body'>
                     <label>number
                         <input type='number' name='number' value={formData.number} onChange={handleChange} required />

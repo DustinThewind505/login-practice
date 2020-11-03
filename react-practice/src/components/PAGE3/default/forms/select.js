@@ -35,10 +35,10 @@ function SelectInputForm(props) {
 
     return (
         <div className='form-container'>
-            <h3>Form #5 - select</h3>
+            <h3>Form #5</h3>
             <p>Select: {formData.select}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Select: {formData.select}</h3>
+                <h3>Form #5 - select</h3>
                 <section className='form-body'>
                     <label>select
                         <select name='select' value={formData.select} onChange={handleChange}>

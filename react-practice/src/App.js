@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ul>
+        <ul className='home-nav'>
           <li className='nav-buttons'><NavLink exact to='/'>Home</NavLink></li>
           <li className='nav-buttons'><NavLink to='/react-components'>React Components</NavLink></li>
           <li className='nav-buttons'><NavLink to='/avengers' >Avengers APP</NavLink></li>

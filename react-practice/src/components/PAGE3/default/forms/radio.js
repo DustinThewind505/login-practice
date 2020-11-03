@@ -35,10 +35,10 @@ function NumberInputForm(props) {
 
     return (
         <div className='form-container'>
-            <h3>Form #4 - input/radio</h3>
+            <h3>Form #4</h3>
             <p>Radio: {formData.radio}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Radio: {formData.radio}</h3>
+                <h3>Form #4 - input/radio</h3>
                 <section className='form-body'>
                     <div className='radio-container'>
                         <label>Lawful Good

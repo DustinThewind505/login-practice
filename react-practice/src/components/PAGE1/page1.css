@@ -1,0 +1,91 @@
+.blue-button:hover {
+    background: blue;
+    color: lightskyblue;
+  }
+  
+  .red-button:hover {
+    background: red;
+    color: lightsalmon;
+  }
+  
+  .green-button:hover {
+    background: green;
+    color: lightgreen;
+  }
+  
+  .random-button:hover {
+    background: black;
+    color: lawngreen;
+  }
+  
+  
+  .patrick-star {
+    width: 25%;
+    margin: 2em 0;
+    animation: rotate 10s linear forwards infinite;
+  }
+  
+  .input-value-note {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.7em;
+    background-color: red;
+  }
+  
+  .inputValue-note {
+    width: 90%;
+    margin: 2% auto;
+    background-color: lime;
+  }
+  
+  .complete {
+    background-color: black;
+    columns: white;
+    text-decoration: line-through;
+  }
+  
+  .user-lists {
+    width: 90%;
+    display: flex;
+    justify-content: space-between; 
+    background: green;
+  }
+  
+  .user-lists ul {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 3em;
+  }
+  
+  .ghibli-api div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .dog-api img {
+    width: 100%;
+    height: 50vh;
+  }
+  
+  .nasa-api p {
+    font-size: 0.5em;
+    margin: 1em;
+  }
+  
+  .card {
+    height: 1100px;
+  }
+  
+  a:hover {
+    color: white;
+  }
+
+  .advanced-form-body {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }

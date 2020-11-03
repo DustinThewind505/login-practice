@@ -16,6 +16,8 @@ import NasaApi from './nasaApi/nasaApi';
 import FriendsForm from './friendsForm/friendsForm';
 import AdvancedForm from './advancedForm/advancedform';
 
+import './page1.css';
+
 
 function PageOne() {
 

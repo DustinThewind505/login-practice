@@ -1,3 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  transition: all 0.2s ease-in;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} 
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 1% 0 10%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +35,104 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+label {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
+button {
+  padding: 0% 4%;
+  border-radius: 10%;
+  border: 1px solid orange;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.active {
+  background-color: #4285f4;
+  color: white;
+  text-decoration: none;
+}
+
+.error {
+  font-size: 1.2rem;
+  color: red;
+}
+
+.home-nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .App-header section {
+  width: 40%;
+  height: 80vh;
+  margin-top: 1em;
+  padding: 1em 0;
+  border: 1px solid black;
+  background-color: cadetblue;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* button {
+  width: 80px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+  padding: 5px;
+  font-family: fantasy;
+  border: 2px solid #be9c38;
+  border-radius: 2px;
+} */
+
+/* button:hover {
+  background: #be9c38;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+} */
+
+/* .counter-buttons, .color-picker-buttons, .rick-and-morty-buttons, .dog-api-buttons {
+  display: flex;
+} */
