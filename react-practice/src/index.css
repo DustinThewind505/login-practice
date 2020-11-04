@@ -35,13 +35,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-label {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 button {
   padding: 0% 4%;
   border-radius: 10%;
