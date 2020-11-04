@@ -6,6 +6,7 @@ import Form3 from './forms/number';
 import Form4 from './forms/radio';
 import Form5 from './forms/select';
 import Form6 from './forms/checkbox';
+import Form7 from './forms/login';
 
 
 
@@ -22,7 +23,9 @@ function DefaultFormContainer(props) {
     // ========== COMPONENTS ==========
     return (
         <>
-        <img src='https://i.pinimg.com/originals/40/18/19/4018196360d9fd3324ceffbcc182bcc8.png' alt='yup logo' />
+
+            <img className='forms-img default' src='https://i.pinimg.com/originals/40/18/19/4018196360d9fd3324ceffbcc182bcc8.png' alt='yup logo' />
+        
         <div className='forms-page-container default'>
             <Form1 setDisplayForm={props.setDisplayForm}/>
             <Form2 setDisplayForm={props.setDisplayForm}/>
@@ -30,6 +33,7 @@ function DefaultFormContainer(props) {
             <Form4 setDisplayForm={props.setDisplayForm}/>
             <Form5 setDisplayForm={props.setDisplayForm}/>
             <Form6 setDisplayForm={props.setDisplayForm}/>
+            <Form7 setDisplayForm={props.setDisplayForm}/>
         </div>
         </>
     )

@@ -17,7 +17,9 @@ function YupFormContainer(props) {
 
     return (
         <>
-            <img src='https://miro.medium.com/max/1000/1*4Apu-JRlee0VEJbQDplgPg.png' alt='yup logo' />
+
+            <img className='forms-img yup' src='https://miro.medium.com/max/1000/1*4Apu-JRlee0VEJbQDplgPg.png' alt='yup logo' />
+
             <div className='forms-page-container'>
                 <Form1 setDisplayForm={props.setDisplayForm} />
                 <Form2 setDisplayForm={props.setDisplayForm} />

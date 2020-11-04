@@ -92,3 +92,8 @@ form {
   padding: 1% 14%;
   text-decoration: none;
 }
+
+.forms-img {
+  width: 800px;
+  height: 200px;
+}
