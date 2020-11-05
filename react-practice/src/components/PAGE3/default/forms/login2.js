@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 
 
 
-function LoginForm(props) {
+function LoginForm2(props) {
     // ========== STATE ==========
     const [disableButton, setDisableButton] = useState(false)
 
     const [formData, setFormData] = useState({
-        password1: "a",
-        password2: ""
+        email: "",
+        password: ""
     })
 
 
@@ -29,29 +29,11 @@ function LoginForm(props) {
 
         props.setDisplayForm(formData)
 
-        // const small = document.querySelector('small')  
-        
-        // small.innerText = "Error Message"
-
         setFormData({
-            password1: "",
-            password2: ""
+            email: "",
+            password: ""
         })
     }
-
-    useEffect(() => {
-        if(formData.password1 !== formData.password2){
-            setDisableButton(true)
-
-            const small = document.querySelector('small')  
-            small.innerText = "passwords must match"
-            
-        } else {
-            setDisableButton(false)
-            const small = document.querySelector('small')  
-            small.innerText = ""
-        }
-    }, [formData])
 
 
 
@@ -61,16 +43,16 @@ function LoginForm(props) {
     return (
         <>
             <div className='form-container'>
-                <h3>Form #7</h3>
+                <h3>Form #8</h3>
                 <form onSubmit={handleSubmit}>
-                    <h3>Login - inputs/ text & email</h3>
+                    <h3>Login2</h3>
                     <section className='form-body'>
-                        <label>password
-                            <input type='password' name='password1' value={formData.password1} onChange={handleChange} required/>
+                        <label>email
+                            <input type='email' name='email' value={formData.email} onChange={handleChange} autoComplete='on' required/>
                             
                         </label>
-                        <label>confirm password
-                            <input type='password' name='password2' value={formData.password2} onChange={handleChange} required/>
+                        <label>password
+                            <input type='password' name='password' value={formData.password} onChange={handleChange} autoComplete='on' required/>
                             <small className='error'></small>
                         </label>
                     </section>
@@ -83,4 +65,4 @@ function LoginForm(props) {
     )
 }
 
-export default LoginForm;
+export default LoginForm2;
