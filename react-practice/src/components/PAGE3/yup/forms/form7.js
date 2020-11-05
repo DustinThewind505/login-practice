@@ -30,14 +30,14 @@ function Form7(props) {
     // ========== FUNCTION ==========
     const validateChange = e => {
         yup.reach(formSchema, e.target.name).validate(e.target.value)
-        .then(res => setErrorState({
-            ...errorsState,
-            [e.target.name]: ""
-        }))
-        .catch(err => setErrorState({
-            ...errorsState,
-            [e.target.name]: err.errors[0]
-        }))
+            .then(res => setErrorState({
+                ...errorsState,
+                [e.target.name]: ""
+            }))
+            .catch(err => setErrorState({
+                ...errorsState,
+                [e.target.name]: err.errors[0]
+            }))
 
     }
 
@@ -57,12 +57,22 @@ function Form7(props) {
     const handleSubmit = e => {
         e.preventDefault()
 
-        props.setDisplayForm(formData)
+        if (formData.password1 !== formData.password2) {
+            setErrorState({
+                password1: "passwords must match",
+                password2: "passwords must match"
+            })
+        } else {
+            props.setDisplayForm(formData)
 
-        setFormData({
-            password1: "",
-            password2: ""
-        })
+            setFormData({
+                password1: "",
+                password2: ""
+            })
+
+        }
+
+
     }
 
 
@@ -81,11 +91,11 @@ function Form7(props) {
                 <section className='form-body'>
                     <label>password
                         <input type='password' name='password1' value={formData.password1} onChange={handleChange} />
-    {errorsState.password1.length > 0 ? <p className='error'>{errorsState.password1}</p> : null}
+                        {errorsState.password1.length > 0 ? <p className='error'>{errorsState.password1}</p> : null}
                     </label>
                     <label>confirm password
                         <input type='password' name='password2' value={formData.password2} onChange={handleChange} />
-    {errorsState.password2.length > 0 ? <p className='error'>{errorsState.password2}</p> : null}
+                        {errorsState.password2.length > 0 ? <p className='error'>{errorsState.password2}</p> : null}
                     </label>
                 </section>
                 <footer>
