@@ -6,6 +6,7 @@ import Form3 from './forms/form3';
 import Form4 from './forms/form4';
 import Form5 from './forms/form5';
 import Form6 from './forms/form6';
+import Form7 from './forms/form7';
 
 
 
@@ -27,6 +28,7 @@ function YupFormContainer(props) {
                 <Form4 setDisplayForm={props.setDisplayForm} />
                 <Form5 setDisplayForm={props.setDisplayForm} />
                 <Form6 setDisplayForm={props.setDisplayForm} />
+                <Form7 setDisplayForm={props.setDisplayForm} />
             </div>
         </>
     )
