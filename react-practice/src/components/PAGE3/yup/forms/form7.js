@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
-// ========== COMPONENT ==========
+// ========== Form validation with yup dependency ==========
 const formSchema = yup.object().shape({
     password1: yup.string().min(8).lowercase().required(),
     password2: yup.string().min(8).lowercase().required()
