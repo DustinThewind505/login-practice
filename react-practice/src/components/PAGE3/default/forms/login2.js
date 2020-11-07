@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
+// import * as yup from 'yup';
+// // ========== Form validation with yup ==========
+// const formSchema = yup.object().shape({
+//     email: yup.string().email("Must enter a valid email").required(),
+//     password: yup.string().min(8, "password must be at least 8 characters").required()
+// })
 
 
 
@@ -12,6 +17,10 @@ function LoginForm2(props) {
         password: ""
     })
 
+    const [error, setError] = useState('')
+
+
+
 
 
     // ========== FUNCTIONS ==========
@@ -20,6 +29,8 @@ function LoginForm2(props) {
             ...formData,
             [e.target.name]: e.target.value
         }
+
+        
 
         setFormData(newFormState)
     }
@@ -35,6 +46,13 @@ function LoginForm2(props) {
         })
     }
 
+    const handlePasswordError = () => {
+        if (formData.password.length < 7) {
+            setError('password must have 8 characters')
+        } else {
+            setError('')
+        }
+    }
 
 
 
@@ -44,16 +62,18 @@ function LoginForm2(props) {
         <>
             <div className='form-container'>
                 <h3>Form #8</h3>
+                <p>email:{formData.email}</p>
+                <p>password: {formData.password}</p>
                 <form onSubmit={handleSubmit}>
                     <h3>Login2</h3>
                     <section className='form-body'>
                         <label>email
-                            <input type='email' name='email' value={formData.email} onChange={handleChange} autoComplete='on' required/>
-                            
+                            <input type='email' name='email' value={formData.email} onChange={handleChange} autoComplete='on' required />
+
                         </label>
                         <label>password
-                            <input type='password' name='password' value={formData.password} onChange={handleChange} autoComplete='on' required/>
-                            <small className='error'></small>
+                            <input type='password' name='password' value={formData.password} onChange={handleChange} autoComplete='off' required />
+                            <p className='error'>{error}</p>
                         </label>
                     </section>
                     <footer>

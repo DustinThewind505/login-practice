@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-
+import * as yup from 'yup';
 // ========== Form validation with yup dependency ==========
-
+const formSchema = yup.object().shape({
+    email: yup.string().email().required('must enter a valid email'),
+    password: yup.string().min(8, "must be at least 8 characters").required()
+})
 
 
 
@@ -12,14 +15,35 @@ function Form8(props) {
         password: ""
     })
 
+    const [errorsState, setErrorsState] = useState({
+        email: "",
+        password: ""
+    })
+
 
 
     // ========== FUNCTION ==========
+    const validateChange = e => {
+        yup.reach(formSchema, e.target.name).validate(e.target.value)
+            .then(res => setErrorsState({
+                ...errorsState,
+                [e.target.name]: ""
+            }))
+            .catch(err => setErrorsState({
+                ...errorsState,
+                [e.target.name]: err.errors[0]
+            }))
+    }
+
     const handleChange = e => {
+        e.persist(e)
+
         const newFormState = {
             ...formData,
             [e.target.name]: e.target.value
         }
+
+        validateChange(e)
 
         setFormData(newFormState)
     }
@@ -49,9 +73,11 @@ function Form8(props) {
                 <section className='form-body'>
                     <label>email
                         <input type='email' name='email' value={formData.email} onChange={handleChange} />
+                        {errorsState.email.length > 0 ? <p className='error'>{errorsState.email}</p> : null}
                     </label>
                     <label>password
                         <input type='password' name='password' value={formData.password} onChange={handleChange} />
+                        {errorsState.password.length > 0 ? <p className='error'>{errorsState.password}</p> : null}
                     </label>
                 </section>
                 <footer>
