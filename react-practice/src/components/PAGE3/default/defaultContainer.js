@@ -8,6 +8,7 @@ import Form5 from './forms/select';
 import Form6 from './forms/checkbox';
 import Form7 from './forms/login';
 import Form8 from './forms/login2';
+import Form9 from './forms/login3';
 
 
 
@@ -36,6 +37,7 @@ function DefaultFormContainer(props) {
             <Form6 setDisplayForm={props.setDisplayForm}/>
             <Form7 setDisplayForm={props.setDisplayForm}/>
             <Form8 setDisplayForm={props.setDisplayForm}/>
+            <Form9 setDisplayForm={props.setDisplayForm}/>
         </div>
         </>
     )

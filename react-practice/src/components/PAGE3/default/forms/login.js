@@ -62,6 +62,8 @@ function LoginForm(props) {
         <>
             <div className='form-container'>
                 <h3>Form #7</h3>
+                <p>Password: {formData.password1}</p>
+                <p>Confirm pwd: {formData.password2}</p>
                 <form onSubmit={handleSubmit}>
                     <h3>Login - inputs/ text & email</h3>
                     <section className='form-body'>

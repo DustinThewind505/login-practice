@@ -30,7 +30,7 @@ function LoginForm2(props) {
             [e.target.name]: e.target.value
         }
 
-        
+
 
         setFormData(newFormState)
     }
@@ -46,14 +46,22 @@ function LoginForm2(props) {
         })
     }
 
-    const handlePasswordError = () => {
-        if (formData.password.length < 7) {
+    // const handlePasswordError = () => {
+    //     if (formData.password.length < 7) {
+    //         setError('password must have 8 characters')
+    //     } else {
+    //         setError('')
+    //     }
+    // }
+
+    useEffect(() => {
+        if (formData.password.length < 8) {
             setError('password must have 8 characters')
         } else {
             setError('')
         }
-    }
 
+    }, [formData])
 
 
 
