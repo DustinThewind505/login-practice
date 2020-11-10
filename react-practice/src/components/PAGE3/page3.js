@@ -3,6 +3,7 @@ import { Route, NavLink } from 'react-router-dom';
 
 import YupFormContainer from './yup/yupContainer';
 import DefaultForms from './default/defaultContainer';
+import BootstrapForms from './bootstrap/bootstrapContainer';
 
 
 
@@ -29,6 +30,7 @@ function Page3() {
                 <ul className='forms-nav'>
                     <li><NavLink exact to='/page3'>Yup</NavLink></li>
                     <li><NavLink to='/page3/default'>Default</NavLink></li>
+                    <li><NavLink to='/page3/bootstrap'>Bootstrap</NavLink></li>
                 </ul>
                 <Route exact path='/page3'>
                     <YupFormContainer setDisplayForm={setDisplayForm} />
@@ -36,6 +38,10 @@ function Page3() {
                 <Route path='/page3/default'>
                     <DefaultForms setDisplayForm={setDisplayForm} />
                 </Route>
+                <Route path='/page3/bootstrap'>
+                    <BootstrapForms setDisplayForm={setDisplayForm} />
+                </Route>
+                
             </section>
         </>
     )
