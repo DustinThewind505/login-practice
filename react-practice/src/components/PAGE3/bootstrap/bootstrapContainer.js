@@ -4,6 +4,7 @@ import { Card, Container, Row, Col } from 'reactstrap';
 
 // ========== IMPORTED FORMS ==========
 import TextForm from './forms/textForm';
+import EmailForm from './forms/emailForm';
 
 
 
@@ -34,7 +35,7 @@ function BootstrapContainer(props) {
                     {/* ======== Counter ======== */}
                     <Col sm="6" md="4" xl="4">
                         <Card>
-                            <TextForm setDisplayForm={props.setDisplayForm} />
+                            <EmailForm setDisplayForm={props.setDisplayForm} />
                         </Card>
                     </Col>
                     {/* ======== Counter ======== */}

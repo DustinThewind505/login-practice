@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
 
-import { CardHeader, FormText, Form, Label, Input, Button } from 'reactstrap';
+import { CardHeader, Form, Label, Input, Button } from 'reactstrap'
 
 
-function TextForm(props) {
+
+function EmailForm(props) {
     // ========== STATE ==========
     const [formData, setFormData] = useState({
-        username: ""
+        email: ""
     })
+
 
     // ========== FUNCTION ==========
     const handleChange = e => {
-        const newFormstate = {
-            username: e.target.value
+        const newFormState = {
+            email: e.target.value
         }
 
-        setFormData(newFormstate)
+        setFormData(newFormState)
     }
-
     const handleSubmit = e => {
         e.preventDefault()
 
         props.setDisplayForm(formData)
 
         setFormData({
-            username: ""
+            email: ""
         })
     }
 
@@ -32,12 +33,12 @@ function TextForm(props) {
     // ========== COMPONENT ==========
     return (
         <>
-            <CardHeader className='bootstrap-header'>Form #1<br/><p>Username: {formData.username}</p></CardHeader>
+            <CardHeader className='bootstrap-header'>Form #2<br/><p>Email: {formData.email}</p></CardHeader>
             <Form onSubmit={handleSubmit}>
-                <h3>Form #1</h3>
+                <h3>Form #2</h3>
                 <section className='form-body'>
-                    <Label>username
-                        <Input type='text' name='username' value={formData.username} onChange={handleChange} />
+                    <Label>email
+                        <Input type='email' name='email' value={formData.email} onChange={handleChange} />
                     </Label>
                 </section>
                 <footer>
@@ -48,4 +49,4 @@ function TextForm(props) {
     )
 }
 
-export default TextForm;
+export default EmailForm;
