@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as yup from 'yup';
 // ========== Form validation with yup ==========
 const formSchema = yup.object().shape({
-    select: yup.string().oneOf(['Human', 'Pickle'], 'must decide!')
+    curDate: yup.date().min('01-22-2019', 'must select current date')
 })
 
 
@@ -11,11 +11,11 @@ function Form10(props) {
     const [disableButton, setDisableButton] = useState(true)
 
     const [formData, setFormData] = useState({
-        select: ""
+        curDate: ""
     })
 
     const [errorState, setErrorState] = useState({
-        select: ""
+        curDate: ""
     })
 
 
@@ -23,9 +23,9 @@ function Form10(props) {
 
     // ========== FUNCTION ==========
     const validateChange = e => {
-        yup.reach(formSchema, 'select').validate(e.target.value)
-            .then(res => setErrorState({ select: "" }))
-            .catch(err => setErrorState({ select: err.errors[0] }))
+        yup.reach(formSchema, 'curDate').validate(e.target.value)
+            .then(res => setErrorState({ curDate: "" }))
+            .catch(err => setErrorState({ curDate: err.errors[0] }))
     }
 
 
@@ -33,7 +33,7 @@ function Form10(props) {
         e.persist()
 
         const newFormState = {
-            select: e.target.value
+            curDate: e.target.value
         }
 
         validateChange(e)
@@ -48,7 +48,7 @@ function Form10(props) {
         props.setDisplayForm(formData)
 
         setFormData({
-            select: ""
+            curDate: ""
         })
     }
 
@@ -62,18 +62,13 @@ function Form10(props) {
     return (
         <div className='form-container'>
             <h3>Form #10</h3>
-            <p>input: {formData.select}</p>
-            <p>input: {formData.select}</p>
+            <p>input: {formData.curDate}</p>
             <form onSubmit={handleSubmit}>
                 <h3>Form #10</h3>
                 <section className='form-body'>
                     <label>
-                        <select name='select' value={formData.select} onChange={handleChange}>
-                            <option value=''>== Choose one ==</option>
-                            <option value='Human'>Human</option>
-                            <option value='Pickle'>Pickle</option>
-                        </select>
-                        {errorState.select.length > 0 ? <p className='error'>{errorState.select}</p> : null}
+                        <input type='date' name='curDate' value={formData.curDate} onChange={handleChange} />
+                        {errorState.curDate.length > 0 ? <p className='error'>{errorState.curDate}</p> : null}
                     </label>
                 </section>
                 <footer>

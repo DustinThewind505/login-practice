@@ -11,6 +11,7 @@ import Form7 from './forms/form7';
 import Form8 from './forms/form8';
 import Form9 from './forms/form9';
 import Form10 from './forms/form10';
+import Form11 from './forms/form11';
 
 
 
@@ -40,6 +41,7 @@ function YupFormContainer(props) {
                 <Form8 setDisplayForm={props.setDisplayForm} />
                 <Form9 setDisplayForm={props.setDisplayForm} />
                 <Form10 setDisplayForm={props.setDisplayForm} />
+                <Form11 setDisplayForm={props.setDisplayForm} />
             </div>
         </>
     )
