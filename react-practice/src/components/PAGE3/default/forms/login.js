@@ -8,8 +8,13 @@ function LoginForm(props) {
     const [disableButton, setDisableButton] = useState(false)
 
     const [formData, setFormData] = useState({
-        password1: "a",
+        password1: "",
         password2: ""
+    })
+
+    const [errors, setErrors] = useState({
+        password1: "*",
+        password2: "*"
     })
 
 
@@ -29,27 +34,60 @@ function LoginForm(props) {
 
         props.setDisplayForm(formData)
 
-        // const small = document.querySelector('small')  
-        
-        // small.innerText = "Error Message"
-
         setFormData({
             password1: "",
             password2: ""
         })
+
+        setErrors({
+            password1: '*',
+            password2: '*'
+        })
     }
 
     useEffect(() => {
-        if(formData.password1 !== formData.password2){
-            setDisableButton(true)
+        if(formData.password1.length === 0) {
+            setErrors({
+                ...errors,
+                password1: '*'
+            })
+        } else if(formData.password1.length < 8) {
+            setErrors({
+                ...errors,
+                password1: 'password must have 8 characters'
+            })
+        } else {
+            setErrors({
+                ...errors,
+                password1: ""
+            })
+        }
+    }, [formData.password1])
 
-            const small = document.querySelector('small')  
-            small.innerText = "passwords must match"
-            
+    useEffect(() => {
+        if(formData.password2.length === 0) {
+            setErrors({
+                ...errors,
+                password2: '*'
+            })
+        } else if(formData.password1 !== formData.password2) {
+            setErrors({
+                ...errors,
+                password2: 'passwords must match'
+            })
+        } else {
+            setErrors({
+                ...errors,
+                password2: ""
+            })
+        }
+    }, [formData.password2])
+
+    useEffect(() => {
+        if(formData.password1 !== formData.password2 || formData.password1.length < 8){
+            setDisableButton(true)
         } else {
             setDisableButton(false)
-            const small = document.querySelector('small')  
-            small.innerText = ""
         }
     }, [formData])
 
@@ -69,11 +107,11 @@ function LoginForm(props) {
                     <section className='form-body'>
                         <label>password
                             <input type='password' name='password1' value={formData.password1} onChange={handleChange} required/>
-                            
+                            <p className='error'>{errors.password1}</p>
                         </label>
                         <label>confirm password
                             <input type='password' name='password2' value={formData.password2} onChange={handleChange} required/>
-                            <small className='error'></small>
+                            <p className='error'>{errors.password2}</p>
                         </label>
                     </section>
                     <footer>

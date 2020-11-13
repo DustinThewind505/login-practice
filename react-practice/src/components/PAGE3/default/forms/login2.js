@@ -13,7 +13,7 @@ function LoginForm2(props) {
     })
 
     const [error, setError] = useState({
-        email: "",
+        email: "*",
         password: "*"
     })
 
@@ -40,11 +40,21 @@ function LoginForm2(props) {
             email: "",
             password: ""
         })
+
+        setError({
+            ...error,
+            password: '*'
+        })
     }
 
 
     useEffect(() => {
-        if (formData.password.length < 8) {
+        if (formData.password.length === 0) {
+            setError({
+                ...error,
+                password: '*'
+            })
+        } else if (formData.password.length < 8) {
             setError({
                 ...error,
                 password: 'password must have 8 characters'
@@ -60,7 +70,7 @@ function LoginForm2(props) {
 
 
     useEffect(() => {
-        if(formData.email.length === 0) {
+        if (formData.email.length === 0) {
             setError({
                 ...error,
                 email: '*'
@@ -74,7 +84,7 @@ function LoginForm2(props) {
     }, [formData.email])
 
     useEffect(() => {
-        if(formData.password.length > 7 && formData.email.length > 0) {
+        if (formData.password.length > 7 && formData.email.length > 0) {
             setDisableButton(false)
         } else {
             setDisableButton(true)
