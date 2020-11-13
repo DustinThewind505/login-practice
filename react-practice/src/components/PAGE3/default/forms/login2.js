@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react';
-// import * as yup from 'yup';
-// // ========== Form validation with yup ==========
-// const formSchema = yup.object().shape({
-//     email: yup.string().email("Must enter a valid email").required(),
-//     password: yup.string().min(8, "password must be at least 8 characters").required()
-// })
+
 
 
 
 function LoginForm2(props) {
     // ========== STATE ==========
-    const [disableButton, setDisableButton] = useState(false)
+    const [disableButton, setDisableButton] = useState(true)
 
     const [formData, setFormData] = useState({
         email: "",
         password: ""
     })
 
-    const [error, setError] = useState('')
+    const [error, setError] = useState({
+        email: "",
+        password: "*"
+    })
 
 
 
@@ -29,8 +27,6 @@ function LoginForm2(props) {
             ...formData,
             [e.target.name]: e.target.value
         }
-
-
 
         setFormData(newFormState)
     }
@@ -46,23 +42,44 @@ function LoginForm2(props) {
         })
     }
 
-    // const handlePasswordError = () => {
-    //     if (formData.password.length < 7) {
-    //         setError('password must have 8 characters')
-    //     } else {
-    //         setError('')
-    //     }
-    // }
 
     useEffect(() => {
         if (formData.password.length < 8) {
-            setError('password must have 8 characters')
+            setError({
+                ...error,
+                password: 'password must have 8 characters'
+            })
         } else {
-            setError('')
+            setError({
+                ...error,
+                password: ""
+            })
         }
 
-    }, [formData])
+    }, [formData.password])
 
+
+    useEffect(() => {
+        if(formData.email.length === 0) {
+            setError({
+                ...error,
+                email: '*'
+            })
+        } else {
+            setError({
+                ...error,
+                email: ''
+            })
+        }
+    }, [formData.email])
+
+    useEffect(() => {
+        if(formData.password.length > 7 && formData.email.length > 0) {
+            setDisableButton(false)
+        } else {
+            setDisableButton(true)
+        }
+    }, [formData])
 
 
     // ========== COMPONENT ==========
@@ -77,11 +94,11 @@ function LoginForm2(props) {
                     <section className='form-body'>
                         <label>email
                             <input type='email' name='email' value={formData.email} onChange={handleChange} autoComplete='on' required />
-
+                            <p className='error'>{error.email}</p>
                         </label>
                         <label>password
                             <input type='password' name='password' value={formData.password} onChange={handleChange} autoComplete='off' required />
-                            <p className='error'>{error}</p>
+                            <p className='error'>{error.password}</p>
                         </label>
                     </section>
                     <footer>
