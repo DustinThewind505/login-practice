@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as yup from 'yup';
 // ========== Form validation with yup ==========
 const formSchema = yup.object().shape({
-    curDate: yup.date().min('01-22-2019', 'must select current date')
+    curDate: yup.date().min('11-12-2020', 'must select current date')
 })
 
 
