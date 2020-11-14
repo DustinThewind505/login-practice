@@ -38,7 +38,7 @@ function NumberInputForm(props) {
             <h3>Form #4</h3>
             <p>Radio: {formData.radio}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #4 - input/radio</h3>
+                <h3>Input: radio</h3>
                 <section className='form-body'>
                     <div className='radio-container'>
                         <label>Lawful Good
@@ -57,7 +57,6 @@ function NumberInputForm(props) {
                 </section>
                 <footer>
                     <button type='submit'>Submit</button>
-                    {/* disabled={disableButton} */}
                 </footer>
             </form>
         </div>

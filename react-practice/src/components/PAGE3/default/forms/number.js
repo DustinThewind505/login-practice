@@ -38,7 +38,7 @@ function NumberInputForm(props) {
             <h3>Form #3</h3>
             <p>Number: {formData.number}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #3 - input/number</h3>
+                <h3>Input: number</h3>
                 <section className='form-body'>
                     <label>number
                         <input type='number' name='number' value={formData.number} onChange={handleChange} required />
@@ -46,7 +46,6 @@ function NumberInputForm(props) {
                 </section>
                 <footer>
                     <button type='submit'>Submit</button>
-                    {/* disabled={disableButton} */}
                 </footer>
             </form>
         </div>

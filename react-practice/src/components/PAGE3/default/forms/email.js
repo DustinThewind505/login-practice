@@ -38,7 +38,7 @@ function EmailInputForm(props) {
             <h3>Form #2</h3>
             <p>Email: {formData.email}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #2 - input/email</h3>
+                <h3>Input: email</h3>
                 <section className='form-body'>
                     <label>email
                         <input type='email' name='email' value={formData.email} onChange={handleChange} required />
@@ -46,7 +46,6 @@ function EmailInputForm(props) {
                 </section>
                 <footer>
                     <button type='submit'>Submit</button>
-                    {/* disabled={disableButton} */}
                 </footer>
             </form>
         </div>

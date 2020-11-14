@@ -38,7 +38,7 @@ function SelectInputForm(props) {
             <h3>Form #5</h3>
             <p>Select: {formData.select}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #5 - select</h3>
+                <h3>Input: select</h3>
                 <section className='form-body'>
                     <label>select
                         <select name='select' value={formData.select} onChange={handleChange}>
@@ -51,7 +51,6 @@ function SelectInputForm(props) {
                 </section>
                 <footer>
                     <button type='submit'>Submit</button>
-                    {/* disabled={disableButton} */}
                 </footer>
             </form>
         </div>

@@ -103,7 +103,7 @@ function LoginForm(props) {
                 <p>Password: {formData.password1}</p>
                 <p>Confirm pwd: {formData.password2}</p>
                 <form onSubmit={handleSubmit}>
-                    <h3>Login - inputs/ text & email</h3>
+                    <h3>Input: text & email</h3>
                     <section className='form-body'>
                         <label>password
                             <input type='password' name='password1' value={formData.password1} onChange={handleChange} required/>

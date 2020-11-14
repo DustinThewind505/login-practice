@@ -109,7 +109,7 @@ function LoginForm3(props) {
             <p>Name: {formData.name}</p>
             <p>Terms: {formData.termsCondtions ? "Checked✔✔✔🎉🎉" : ""}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #9</h3>
+                <h3>Input: text & checkbox</h3>
                 <section className='form-body'>
                     <label>Full Name
                         <input type='text' name='name' value={formData.name} onChange={handleChange} autoComplete='off' />

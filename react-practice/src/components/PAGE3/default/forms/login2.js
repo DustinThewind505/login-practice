@@ -100,7 +100,7 @@ function LoginForm2(props) {
                 <p>email:{formData.email}</p>
                 <p>password: {formData.password}</p>
                 <form onSubmit={handleSubmit}>
-                    <h3>Login2</h3>
+                    <h3>Input: email & password</h3>
                     <section className='form-body'>
                         <label>email
                             <input type='email' name='email' value={formData.email} onChange={handleChange} autoComplete='on' required />

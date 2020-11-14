@@ -47,7 +47,7 @@ function TextInputForm(props) {
             <h3>Form #1</h3>
             <p>Username: {formData.username}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #1 - input/text</h3>
+                <h3>Input: text</h3>
                 <section className='form-body'>
                     <label>username
                         <input name='username' value={formData.username} onChange={handleChange} required />
@@ -55,7 +55,6 @@ function TextInputForm(props) {
                 </section>
                 <footer>
                     <button type='submit'>Submit</button>
-                    {/* disabled={disableButton} */}
                 </footer>
             </form>
         </div>
