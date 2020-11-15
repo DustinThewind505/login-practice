@@ -8,46 +8,12 @@ function LoginForm3(props) {
     // ========== STATE ==========
     const [formData, setFormData] = useState({
         name: "",
-        termsCondtions: false
-    })
-
-    const [errorState, setErrorState] = useState({
-        name: "",
-        termsCondtions: false
+        termsConditions: false
     })
 
 
 
     // ========== FUNCTION ==========
-    const handleNameError = e => {
-        if(formData.name === ""){
-            setErrorState({
-                ...errorState,
-                name: "must enter name"
-            })
-        } else {
-            setErrorState({
-                ...errorState,
-                name: ""
-            })
-        }
-    }
-
-    const handleTermsError = e => {
-        if (formData.termsCondtions === false) {
-            setErrorState({
-                ...errorState,
-                termsCondtions: "must agree"
-            })
-        } else {
-            setErrorState({
-                ...errorState,
-                termsCondtions: ""
-            })
-        }
-    }
-
-
     const handleChange = e => {
         e.persist()
 
@@ -56,11 +22,9 @@ function LoginForm3(props) {
             [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
         }
 
-        handleNameError(e)
-        // handleTermsError(e)
-
         setFormData(newFormState)
     }
+
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -69,59 +33,30 @@ function LoginForm3(props) {
 
         setFormData({
             name: "",
-            termsCondtions: ""
+            termsConditions: false
         })
     }
-
-
-    // useEffect(() => {
-    //     if (formData.name === "") {
-    //         setErrorState({
-    //             ...errorState,
-    //             name: "must enter full name"
-    //         })
-    //     } else {
-    //         setErrorState({
-    //             ...errorState,
-    //             name: ""
-    //         })
-    //     }
-    // }, [formData])
-
-    // useEffect(() => {
-    //     if (formData.termsCondtions === false) {
-    //         setErrorState({
-    //             ...errorState,
-    //             termsCondtions: "must agree"
-    //         })
-    //     } else {
-    //         setErrorState({
-    //             ...errorState,
-    //             termsCondtions: ""
-    //         })
-    //     }
-    // }, [formData])
 
     // ========== COMPONENT ==========
     return (
         <div className='form-container'>
             <h3>Form #9</h3>
             <p>Name: {formData.name}</p>
-            <p>Terms: {formData.termsCondtions ? "Checked✔✔✔🎉🎉" : ""}</p>
+            <p>Terms: {formData.termsConditions ? "Checked✔✔✔" : ""}</p>
             <form onSubmit={handleSubmit}>
                 <h3>Input: text & checkbox</h3>
                 <section className='form-body'>
                     <label>Full Name
-                        <input type='text' name='name' value={formData.name} onChange={handleChange} autoComplete='off' />
-                        {errorState.name ? <p className='error'>{errorState.name}</p> : null}
+                        <input type='text' name='name' value={formData.name} onChange={handleChange} autoComplete='off' required/>
+                        {formData.name.length < 1 ? <p className='error'>*</p> : null}
                     </label>
                     <label>Terms & Conditions
-                        <input type='checkbox' name='termsCondtions' checked={formData.termsCondtions} onChange={handleChange} />
-                        {errorState.termsCondtions ? <p className='error'>{errorState.termsCondtions}</p> : null}
+                        <input type='checkbox' name='termsConditions' checked={formData.termsConditions} onChange={handleChange} required/>
+                        {formData.termsConditions === false ? <p className='error'>*</p> : null}
                     </label>
                 </section>
                 <footer>
-                    <button type='submit'>Submit</button>
+                    <button type='submit' disabled={formData.name.length > 0 && formData.termsConditions === true ? false : true}>Submit</button>
                 </footer>
             </form>
         </div>
