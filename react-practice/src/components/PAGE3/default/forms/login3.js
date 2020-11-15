@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 
 
@@ -47,12 +47,12 @@ function LoginForm3(props) {
                 <h3>Input: text & checkbox</h3>
                 <section className='form-body'>
                     <label>Full Name
-                        <input type='text' name='name' value={formData.name} onChange={handleChange} autoComplete='off' required/>
-                        {formData.name.length < 1 ? <p className='error'>*</p> : null}
+                        <input type='text' name='name' value={formData.name} onChange={handleChange} autoComplete='off' required />
+                        {formData.name.length < 1 ? <p className='error'>*</p> : <p className='accept'>✔</p>}
                     </label>
                     <label>Terms & Conditions
-                        <input type='checkbox' name='termsConditions' checked={formData.termsConditions} onChange={handleChange} required/>
-                        {formData.termsConditions === false ? <p className='error'>*</p> : null}
+                        <input type='checkbox' name='termsConditions' checked={formData.termsConditions} onChange={handleChange} required />
+                        {formData.termsConditions === false ? <p className='error'>*</p> : <p className='accept'>✔</p>}
                     </label>
                 </section>
                 <footer>
