@@ -24,7 +24,7 @@ function ColorInput(props) {
 
         setFormData(newFormState)
 
-        setBgColor(formData.currentColor)
+        setBgColor(e.target.value)
     }
 
     const handleSubmit = e => {
@@ -35,6 +35,8 @@ function ColorInput(props) {
         setFormData({
             currentColor: ""
         })
+
+        setBgColor('darkred')
     }
 
 
@@ -48,7 +50,7 @@ function ColorInput(props) {
                 <section className='form-body'>
                     <label>
                         <input type='color' name='currentColor' value={formData.currentColor} onChange={handlechange} required />
-                        <p className='error'>{formData.currentColor === "" ? 'select new color' : null}</p>
+                        <p className='error'>{formData.currentColor === "" ? '*' : '✔'}</p>
                     </label>
                     <footer>
                         <button type='submit' disabled={formData.currentColor ? false : true}>Submit</button>
