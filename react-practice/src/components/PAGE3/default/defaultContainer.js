@@ -8,6 +8,7 @@ import Form4 from './forms/radio';
 import Form5 from './forms/select';
 import Form6 from './forms/checkbox';
 import Form7 from './forms/date';
+import Form8 from './forms/color';
 import Form10 from './forms/login';
 import Form11 from './forms/login2';
 import Form12 from './forms/login3';
@@ -38,6 +39,7 @@ function DefaultFormContainer(props) {
                 <Form5 setDisplayForm={props.setDisplayForm} />
                 <Form6 setDisplayForm={props.setDisplayForm} />
                 <Form7 setDisplayForm={props.setDisplayForm} />
+                <Form8 setDisplayForm={props.setDisplayForm} />
                 <Form10 setDisplayForm={props.setDisplayForm} />
                 <Form11 setDisplayForm={props.setDisplayForm} />
                 <Form12 setDisplayForm={props.setDisplayForm} />
