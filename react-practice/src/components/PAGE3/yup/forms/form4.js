@@ -60,7 +60,7 @@ function Form4(props) {
             <h3>Form #4</h3>
             <p>Terms & Cons: {formData.agree ? "Agreed✔✔✔" : ""}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #4 - checkbox</h3>
+                <h3>Input: checkbox</h3>
                 <section className='form-body'>
                     <label>terms & conditions
                         <input type="checkbox" name="agree" onChange={handleChange} checked={formData.agree} />

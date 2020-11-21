@@ -85,7 +85,7 @@ function Form7(props) {
             <p>input 1: {formData.password1}</p>
             <p>input 2: {formData.password2}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #7</h3>
+                <h3>Input: password</h3>
                 <section className='form-body'>
                     <label>password
                         <input type='password' name='password1' value={formData.password1} onChange={handleChange} />

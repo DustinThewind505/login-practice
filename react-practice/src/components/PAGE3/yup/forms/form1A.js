@@ -9,7 +9,7 @@ function FormOne(props) {
 
     return (
         <form onSubmit={props.handleSubmit}>
-                <h3>Form #1 - input/text</h3>
+                <h3>Input: text</h3>
                 <section className='form-body'>
                     <label>username
                     <input type='text' name='username' value={props.formData.username} onChange={props.handleChange} />

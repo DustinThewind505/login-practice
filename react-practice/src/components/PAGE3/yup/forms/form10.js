@@ -62,9 +62,9 @@ function Form10(props) {
     return (
         <div className='form-container'>
             <h3>Form #10</h3>
-            <p>input: {formData.curDate}</p>
+            <p>Date: {formData.curDate}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #10</h3>
+                <h3>Input: date</h3>
                 <section className='form-body'>
                     <label>
                         <input type='date' name='curDate' value={formData.curDate} onChange={handleChange} />

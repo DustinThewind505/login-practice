@@ -60,7 +60,7 @@ function Form3(props) {
             <h3>Form #3</h3>
             <p>Food: {formData.food}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #3 - select</h3>
+                <h3>Input: select</h3>
                 <section className="form-body">
                     <label>food
                         <select name="food" value={formData.food} onChange={handleChange}>

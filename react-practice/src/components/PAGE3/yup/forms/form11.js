@@ -67,9 +67,9 @@ function Form11(props) {
     return (
         <div className='form-container'>
             <h3>Form #11</h3>
-            <p>input: {formData.curColor}</p>
+            <p>Color: {formData.curColor}</p>
             <form onSubmit={handlesubmit} style={bgStyle}>
-                <h3>Form #11</h3>
+                <h3>Input: color</h3>
                 <section className='form-body'>
                     <label>
                         <input type='color' name='curColor' value={formData.curColor} onChange={handleChange} />

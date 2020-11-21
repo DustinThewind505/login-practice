@@ -76,10 +76,10 @@ function Form9(props) {
     return (
         <div className='form-container'>
             <h3>Form #9</h3>
-            <p>input: {formData.username}</p>
-            <p>input: {formData.jelly}</p>
+            <p>Username: {formData.username}</p>
+            <p>Jelly: {formData.jelly}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #9</h3>
+                <h3>Input: text, email, select, checkbox</h3>
                 <section className='form-body'>
                     <label>username
                         <input type='text' name='username' value={formData.username} onChange={handleChange} />

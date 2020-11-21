@@ -69,7 +69,7 @@ function Form8(props) {
             <p>input 1: {formData.email}</p>
             <p>input 2: {formData.password}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #8</h3>
+                <h3>Input: email & password</h3>
                 <section className='form-body'>
                     <label>email
                         <input type='email' name='email' value={formData.email} onChange={handleChange} />

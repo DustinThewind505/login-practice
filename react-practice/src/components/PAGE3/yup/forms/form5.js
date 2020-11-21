@@ -29,6 +29,7 @@ function Form5(props) {
 
     const handleChange = (e) => {
         e.persist()
+        
         const newFormState = {
             number: e.target.value
         }
@@ -59,7 +60,7 @@ function Form5(props) {
             <h3>Form #5</h3>
             <p>Number: {formData.number}</p>
             <form onSubmit={handleSubmit}>
-                <h3>Form #5 - input/number</h3>
+                <h3>Input: number</h3>
                 <section className='form-body'>
                     <label>number
                        <input type='number' value={formData.number} onChange={handleChange} />
