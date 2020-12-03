@@ -10,9 +10,10 @@ import Form6 from './forms/checkbox';
 import Form7 from './forms/date';
 import Form8 from './forms/color';
 import Form9 from './forms/button';
-import Form10 from './forms/login';
-import Form11 from './forms/login2';
-import Form12 from './forms/login3';
+import Form10 from './forms/range';
+import Form20 from './forms/login';
+import Form21 from './forms/login2';
+import Form22 from './forms/login3';
 
 
 
@@ -43,8 +44,9 @@ function DefaultFormContainer(props) {
                 <Form8 setDisplayForm={props.setDisplayForm} />
                 <Form9 setDisplayForm={props.setDisplayForm} />
                 <Form10 setDisplayForm={props.setDisplayForm} />
-                <Form11 setDisplayForm={props.setDisplayForm} />
-                <Form12 setDisplayForm={props.setDisplayForm} />
+                <Form20 setDisplayForm={props.setDisplayForm} />
+                <Form21 setDisplayForm={props.setDisplayForm} />
+                <Form22 setDisplayForm={props.setDisplayForm} />
             </div>
         </>
     )
