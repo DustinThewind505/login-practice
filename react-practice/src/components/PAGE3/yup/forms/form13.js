@@ -3,7 +3,7 @@ import { validate } from 'uuid';
 import * as yup from 'yup';
 // ========== From validation with yup ==========
 const formSchema = yup.object().shape({
-    range: yup.number().min(50, 'must be over 50')
+    range: yup.number().min(50, '*must be over 50').max(75, '*must be under 75')
 })
 
 
@@ -60,7 +60,7 @@ function RangeInput(props) {
                 <section className='form-body'>
                     <label>
                         <input type='range' name='range' min='0' max='100' value={formData.range} onChange={handleChange} />
-                        {errorState.range.length > 0 ? <p className='error'>{errorState.range}</p> : null}
+                        {errorState.range.length > 0 ? <p className='error'>{errorState.range}</p> : <p className='error'>*</p>}
                     </label>
                 </section>
                 <footer>
