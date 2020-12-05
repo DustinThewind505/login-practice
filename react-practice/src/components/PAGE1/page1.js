@@ -15,6 +15,7 @@ import RickAndMortyApi from './rickAndMorty/RickAndMorty';
 import NasaApi from './nasaApi/nasaApi';
 import FriendsForm from './friendsForm/friendsForm';
 import AdvancedForm from './advancedForm/advancedform';
+import { ClassComponentForm } from './classComponentForm'
 
 import './page1.css';
 
@@ -145,6 +146,13 @@ function PageOne() {
                 <Col sm="6" md="4" xl="6">
                     <Card style={bgStyles} className="friends-form">
                         <AdvancedForm fontStyles={fontStyles} />
+                        <img src={logo} className="App-logo" alt="logo" />
+                    </Card>
+                </Col>
+                {/* ======== Class Component Form ======== */}
+                <Col sm="6" md="4" xl="6">
+                    <Card style={bgStyles} className="friends-form">
+                        <ClassComponentForm />
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>
                 </Col>

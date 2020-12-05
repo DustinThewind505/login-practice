@@ -1,0 +1,1 @@
+export { default as ClassComponentForm } from './classComponentForm';
