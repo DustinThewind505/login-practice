@@ -5,6 +5,7 @@ import PageOne from './components/PAGE1/page1';
 import AvengersApp from './components/PAGE2/avengersApp';
 import Avenger from './components/PAGE2/avengerBio';
 import PageThree from './components/PAGE3/page3';
+import { CustomHooks } from './components/PAGE4';
 
 import { avengersData } from './components/PAGE2/avengersData';
 import './App.css';
@@ -31,6 +32,7 @@ function App() {
           <li className='nav-buttons'><NavLink to='/react-components'>React Components</NavLink></li>
           <li className='nav-buttons'><NavLink to='/avengers' >Avengers APP</NavLink></li>
           <li className='nav-buttons'><NavLink to='/page3' >Forms</NavLink></li>
+          <li className='nav-buttons'><NavLink to='/customHooks'>Hooks</NavLink></li>
         </ul>
         <Route exact path='/' component={Home} />
         <Route path='/react-components' component={PageOne} />
@@ -38,6 +40,9 @@ function App() {
         <Route path='/avengers/:id' render={props => <Avenger {...props} avengersData={avengersData} />} />
         <Route path='/page3'>
           <PageThree />
+        </Route>
+        <Route path='/customHooks'>
+          <CustomHooks />
         </Route>
       </header>
     </div>
