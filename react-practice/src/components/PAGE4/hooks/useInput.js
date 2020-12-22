@@ -1,13 +1,30 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
-const useInput = initialValue => {
-    const [value, setValue] = useState(initialValue);
+import useLocalStorage from './useLocalStorage';
 
-    const handleChange = updatedValue => {
-        setValue(updatedValue)
+const useInput = (key, initialValue) => {
+    const [values, setValue] = useLocalStorage(key, initialValue);
+
+    const handleChange = e => {
+        setValue({
+            ...values,
+            [e.target.name]: e.target.value
+        })
     };
 
-    return [value, setValue, handleChange]
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        alert(`Hello ${values}`)
+    }
+
+    const clearForm = e => {
+        e.preventDefault();
+
+        setValue(initialValue)
+    }
+
+    return [values, clearForm, handleChange, handleSubmit]
 }
 
 export default useInput;

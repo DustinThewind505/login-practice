@@ -11,12 +11,9 @@ function TextForm(props) {
 
     // ========== FUNCTION ==========
     // const handleChange = e => {
-    //     const newFormstate = {
-    //         username: e.target.value
+    // ***No handleChange because we put it in out custom hook***
     //     }
 
-    //     setFormData(newFormstate)
-    // }
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -30,7 +27,7 @@ function TextForm(props) {
     // ========== COMPONENT ==========
     return (
         <>
-            <CardHeader className='bootstrap-header'>Form #1<br/><p>Username: {formData}</p></CardHeader>
+            <CardHeader className='bootstrap-header'>Form #1<br /><p>Username: {formData}</p></CardHeader>
             <Form onSubmit={handleSubmit}>
                 <h3>Form #1</h3>
                 <section className='form-body'>

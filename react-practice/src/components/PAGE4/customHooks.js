@@ -4,21 +4,16 @@ import useInput from './hooks/useInput';
 
 function DynamicTitle() {
     // ========== STATE ==========
-    const [username, setUsername, handleUsername] = useInput("");
-    const [email, setEmail, handleEmail] = useInput("");
-    const [password, setPassword, handlePassword] = useInput("");
+    const [formData, clearForm, handleFormChange, handleSubmit] = useInput("formData", {
+        username: "",
+        email: "",
+        password: ""
+    });
+
 
     // ========== FUNCTION ==========
 
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        setUsername("")
-
-        setEmail("")
-
-        setPassword("")
-    }
+    
 
     // ========== COMPONENT ==========
     return(
@@ -27,19 +22,20 @@ function DynamicTitle() {
             <form onSubmit={handleSubmit}>
                 <h2>Hooks are awsome!</h2>
                 <lable>username
-                    <input type='text' name='username' value={username} onChange={e => handleUsername(e.target.value)}/>
+                    <input type='text' name='username' value={formData.username} onChange={handleFormChange}/>
                 </lable>
                 <label>e-mail
-                    <input type='email' name='email' value={email} onChange={e => handleEmail(e.target.value)} />
+                    <input type='email' name='email' value={formData.email} onChange={handleFormChange} />
                 </label>
                 <label>password
-                    <input type='password' name='password' value={password} onChange={e => handlePassword(e.target.value)} />
+                    <input type='password' name='password' value={formData.password} onChange={handleFormChange} />
                 </label>
                 <button type='submit'>Submit</button>
+                <button onClick={clearForm}>Clear</button>
             </form>
-            <p>{username}</p>
-            <p>{email}</p>
-            <p>{password}</p>
+            <p>{formData.username}</p>
+            <p>{formData.email}</p>
+            <p>{formData.password}</p>
         </div>
     )
 }
