@@ -25,7 +25,7 @@ function Page3() {
                 <h1><span>🧾</span> Forms <span>📜</span></h1>
                 <form onSubmit={e => e.preventDefault()} className="display-form">
                     <h2>Display Form</h2>
-                    {Object.values(displayForm).map((element, index) => <p key={index}>{typeof element === "boolean" ? "Checked✔✔✔" : element}</p>)}
+                    {typeof displayForm === "string" ? <p>{displayForm}</p> : Object.values(displayForm).map((element, index) => <p key={index}>{typeof element === "boolean" ? "Checked✔✔✔" : element}</p>)}
                 </form>
                 <ul className='forms-nav'>
                     <li><NavLink exact to='/page3'>Yup</NavLink></li>

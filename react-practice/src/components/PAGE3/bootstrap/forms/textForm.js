@@ -1,43 +1,41 @@
 import React, { useState } from 'react';
 
+import useInput from '../../../PAGE4/hooks/useInput';
+
 import { CardHeader, FormText, Form, Label, Input, Button } from 'reactstrap';
 
 
 function TextForm(props) {
     // ========== STATE ==========
-    const [formData, setFormData] = useState({
-        username: ""
-    })
+    const [formData, setFormData, handleFormData] = useInput("")
 
     // ========== FUNCTION ==========
-    const handleChange = e => {
-        const newFormstate = {
-            username: e.target.value
-        }
+    // const handleChange = e => {
+    //     const newFormstate = {
+    //         username: e.target.value
+    //     }
 
-        setFormData(newFormstate)
-    }
+    //     setFormData(newFormstate)
+    // }
 
     const handleSubmit = e => {
         e.preventDefault()
 
         props.setDisplayForm(formData)
 
-        setFormData({
-            username: ""
-        })
+        setFormData("")
     }
 
 
     // ========== COMPONENT ==========
     return (
         <>
-            <CardHeader className='bootstrap-header'>Form #1<br/><p>Username: {formData.username}</p></CardHeader>
+            <CardHeader className='bootstrap-header'>Form #1<br/><p>Username: {formData}</p></CardHeader>
             <Form onSubmit={handleSubmit}>
                 <h3>Form #1</h3>
                 <section className='form-body'>
                     <Label>username
-                        <Input type='text' name='username' value={formData.username} onChange={handleChange} />
+                        <Input type='text' name='username' value={formData} onChange={e => handleFormData(e.target.value)} />
                     </Label>
                 </section>
                 <footer>
