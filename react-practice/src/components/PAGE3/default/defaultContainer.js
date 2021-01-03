@@ -14,6 +14,7 @@ import Form10 from './forms/range';
 import Form20 from './forms/login';
 import Form21 from './forms/login2';
 import Form22 from './forms/login3';
+import Form100 from './forms/NEW';
 
 
 
@@ -47,6 +48,7 @@ function DefaultFormContainer(props) {
                 <Form20 setDisplayForm={props.setDisplayForm} />
                 <Form21 setDisplayForm={props.setDisplayForm} />
                 <Form22 setDisplayForm={props.setDisplayForm} />
+                <Form100 />
             </div>
         </>
     )
